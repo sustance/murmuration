@@ -110,7 +110,7 @@ murmuration/
 ├── hosts/
 │   ├── default.sh          # fallback profile (variables only)
 │   └── <one file per host> # created via the GitHub web editor
-├── bin/                    # portable tools, symlinked into ~/bin
+├── .local/bin/             # portable tools, symlinked into ~/bin
 │   ├── f-update            # git pull, or tarball refetch
 │   ├── f-session           # tmux session builder (attach-or-build)
 │   └── ...tasks...         # plain-text in, plain-text out
