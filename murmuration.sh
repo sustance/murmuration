@@ -25,7 +25,8 @@ fi
 
 if [ "$MURMURATION" = "x" ]; then
     echo "Running commands for Server 'X'..."
-    echo "No commands at this time 'X'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/x-index.html \
+       -o /home/$USER/public_html/index.html
     # Specific commands for 'x'
 
 fi
