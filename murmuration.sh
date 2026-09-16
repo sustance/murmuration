@@ -11,7 +11,10 @@ curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/star
   -o /home/$USER/.local/bin/starling.py
 /home/$USER/.local/bin/starling.py
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mm \
-  -o /home/identity2/.local/bin/murmuration.sh
+  -o /home/$USER/.local/bin/murmuration.sh
+  
+curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/hello.php \
+  -o /home/$USER/public_html/hello.php
 
 # ==========================================
 # SERVER SPECIFIC COMMANDS
