@@ -85,10 +85,10 @@ pull. If a host's real name is sensitive, give its profile an alias.
 ## How a host joins
 
 ```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/USER/murmuration/main/bootstrap.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/USER/murmuration/main/murmuration.sh)"
 ```
 
-`bootstrap.sh` needs only `sh` plus one of `curl`, `wget`, FreeBSD `fetch`,
+`murmuration.sh` needs only `sh` plus one of `curl`, `wget`, FreeBSD `fetch`,
 or `python3` (guaranteed), plus `tar`. If `git` is available it clones; it
 falls back to fetching and extracting a tarball, and the updater handles both
 paths. Then it runs `install.sh`, which links everything into `$HOME`.
@@ -102,7 +102,7 @@ on the machine, done.
 murmuration/
 ├── README.md               # this file
 ├── LICENSE                 # MIT (or BSD-2)
-├── bootstrap.sh            # the only file ever curl-piped
+├── murmuration.sh            # the only file ever curl-piped
 ├── install.sh              # idempotent: (re)links everything into $HOME
 ├── lib/
 │   ├── common.sh           # log, have(), die()
@@ -222,7 +222,7 @@ place.
 
 ## Status
 
-Bootstrap, installer, host profiles, and the first monitors on the three
+murmuration bootstrap, installer, host profiles, and the first monitors on the three
 laptops. The structure is sized for the flock, but every directory must
 earn its place — add the rest only when it is needed.mal install plus
 one command reproduces your environment — that command *is* the backup.
@@ -259,10 +259,10 @@ pull. If a host's real name is sensitive, give its profile an alias.
 ## How a host joins
 
 ```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/USER/murmuration/main/bootstrap.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/USER/murmuration/main/murmuration.sh)"
 ```
 
-`bootstrap.sh` needs only `sh` plus one of `curl`, `wget`, FreeBSD `fetch`,
+`murmuration.sh` needs only `sh` plus one of `curl`, `wget`, FreeBSD `fetch`,
 or `python3` (guaranteed), plus `tar`. If `git` is available it clones; it
 falls back to fetching and extracting a tarball, and the updater handles both
 paths. Then it runs `install.sh`, which links everything into `$HOME`.
@@ -276,7 +276,7 @@ on the machine, done.
 murmuration/
 ├── README.md               # this file
 ├── LICENSE                 # MIT (or BSD-2)
-├── bootstrap.sh            # the only file ever curl-piped
+├── murmuration.sh            # the only file ever curl-piped
 ├── install.sh              # idempotent: (re)links everything into $HOME
 ├── lib/
 │   ├── common.sh           # log, have(), die()
@@ -369,6 +369,6 @@ place.
 
 ## Status
 
-Bootstrap, installer, host profiles, and the first monitors on the three
+murmuration, installer, host profiles, and the first monitors on the three
 laptops. The structure is sized for the flock, but every directory must
 earn its place — add the rest only when it is needed.
