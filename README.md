@@ -137,6 +137,11 @@ HAS_BATTERY=1
 Scripts branch on these; they never contain per-host logic. The repo is the
 whole flock's brain; each host reads its own page.
 
+## Publishing use
+- Each starling and the whole murmuration publishes a complete presence on Web, Gemini, Gopher and other networks.
+- The murmuration is tasked to provide stability and Latency advantages over the relative instability of the individual starling nodes.
+- Tests for unresponsive or high latency nodes need to be develped and systems to provide auto-repair.
+
 ## Daily use
 
 - **`work`** — attach to your main tmux session, building it if absent:
@@ -146,6 +151,28 @@ beats three terminals.
 scripts appear as an Openbox pipe menu (two thin renderers, one source).
 - **Monitors** run detached in a tmux session named `mon`, rebuilt nightly
 so long-running processes never rot on never-rebooted machines.
+
+Example of ping times from London 
+Servers span from SanFrancisco to HK
+```
+Sta-RTT------Svr-----2d-hrs--60d-hrs
+✓   8.9ms    [g]      0.0      0.0 
+✓   9.61ms   [u]      0.0      0.0 
+✓   10.34ms  [r]      0.0      0.0  
+✓   18.41ms  [o]      0.0      0.0 
+✓   19.78ms  [j]      0.0      0.0   
+✓   20.76ms  [f]      0.0      0.0   
+✓   21.25ms  [i]      0.0      0.0  
+✓   21.29ms  [t]      0.0      0.0   
+✓   21.47ms  [b]      0.0      0.0  
+✓   38.03ms  [p]      0.0      0.0   
+✓   38.58ms  [e]      0.0      0.0  
+✓   75.1ms   [c]      0.0      0.0   
+✓   79.93ms  [d]      0.0      0.0  
+✓   80.58ms  [n]      0.0      0.0   
+✓   87.76ms  [v]      0.0      0.0   
+```
+
 - **Glance data** (battery, load) renders in the tmux status line from the
 monitor state file — always visible, zero keypresses.
 
