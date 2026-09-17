@@ -31,39 +31,58 @@ fi
 
 if [ "$MURMURATION" = "o" ]; then
     echo "Running commands for Server 'o'..."
-    
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
+       -o /home/$USER/public_html/eval.php
 fi
 
 if [ "$MURMURATION" = "p" ]; then
     echo "Running commands for Server 'p'..."
-    
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/p-index.html \
+       -o /home/$USER/public_html/index.html
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
+       -o /home/$USER/public_html/eval.php
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
+       -o /home/$USER/public_html/eval.php 
 fi
 
 if [ "$MURMURATION" = "r" ]; then
     echo "Running commands for Server 'r'..."
-    
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/r-index.html \
+       -o /home/$USER/public_html/index.html
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
+       -o /home/$USER/public_html/eval.php
 fi
 
 if [ "$MURMURATION" = "t" ]; then
     echo "Running secondary commands for Server 't'..."
-
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/t-index.html \
+       -o /home/$USER/public_html/index.html
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
+       -o /home/$USER/public_html/eval.php
 fi
 
 if [ "$MURMURATION" = "u" ]; then
     echo "Running secondary commands for Server 'u'..."
-
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/u-index.html \
+       -o /home/$USER/public_html/index.html
+    # NO PHP SERVICE
 fi
 
 if [ "$MURMURATION" = "v" ]; then
     echo "Running secondary commands for Server 'v'..."
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/u-index.html \
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/v-index.html \
        -o /home/$USER/public_html/index.html
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
+       -o /home/$USER/public_html/eval.php
 fi
 
 if [ "$MURMURATION" = "x" ]; then
     echo "Running commands for Server 'X'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/x-index.html \
        -o /home/$USER/public_html/index.html
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
+       -o /home/$USER/public_html/eval.php
 fi
+
 
 echo "[$(date)] Script completed."
