@@ -10,6 +10,7 @@ echo "[$(date)] Running common commands..."
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/starling.py \
   -o /home/$USER/.local/bin/starling.py
 /home/$USER/.local/bin/starling.py
+
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mm \
   -o /home/$USER/.local/bin/murmuration.sh
   
@@ -26,22 +27,43 @@ if [ -z "$MURMURATION" ]; then
     exit 1
 fi
 
-if [ "$MURMURATION" = "x" ]; then
-    echo "Running commands for Server 'X'..."
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/x-index.html \
-       -o /home/$USER/public_html/index.html
-    # Specific commands for 'x'
+
+
+if [ "$MURMURATION" = "o" ]; then
+    echo "Running commands for Server 'o'..."
+    
+fi
+
+if [ "$MURMURATION" = "p" ]; then
+    echo "Running commands for Server 'p'..."
+    
+fi
+
+if [ "$MURMURATION" = "r" ]; then
+    echo "Running commands for Server 'r'..."
+    
+fi
+
+if [ "$MURMURATION" = "t" ]; then
+    echo "Running secondary commands for Server 't'..."
 
 fi
 
 if [ "$MURMURATION" = "u" ]; then
-    echo "Running commands for Server 'u'..."
-    
+    echo "Running secondary commands for Server 'u'..."
+
 fi
 
-if [ "$MURMURATION" = "g" ]; then
-    echo "Running secondary commands for Server 'g'..."
+if [ "$MURMURATION" = "v" ]; then
+    echo "Running secondary commands for Server 'v'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/u-index.html \
+       -o /home/$USER/public_html/index.html
+fi
 
+if [ "$MURMURATION" = "x" ]; then
+    echo "Running commands for Server 'X'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/x-index.html \
+       -o /home/$USER/public_html/index.html
 fi
 
 echo "[$(date)] Script completed."
