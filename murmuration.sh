@@ -10,12 +10,16 @@ echo "[$(date)] Running common commands..."
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/starling.py \
   -o /home/$(id -un)/.local/bin/starling.py
 /home/$(id -un)/.local/bin/starling.py
+echo "Done starling.py"
 
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mm \
-  -o /home/$(id -un)/.local/bin/murmuration.sh
-  
+  -o /home/$(id -un)/.local/bin/mm
+echo "Done mm"
+
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/hello.php \
   -o /home/$(id -un)/public_html/hello.php
+echo "Done hello.php"
+# Only this simple one everywhere. eval.php only on effective php sites 
 
 # ==========================================
 # SERVER SPECIFIC COMMANDS
