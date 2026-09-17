@@ -31,6 +31,10 @@ fi
 
 if [ "$MURMURATION" = "o" ]; then
     echo "Running commands for Server 'o'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/o-index.html \
+       -o /home/$USER/public_html/index.html
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
+       -o /home/$USER/public_html/eval.php
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
        -o /home/$USER/public_html/eval.php
 fi
