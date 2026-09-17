@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS GitHub Content Puller</title>
+    <!-- MVP.css: Styles plain HTML tags automatically -->
+    <link rel="stylesheet" href="https://unpkg.com">
+    <!-- Marked.js: Small library to convert Markdown to HTML -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        main { padding-top: 2rem; }
+        #content-area { min-height: 200px; }
+        .loading { font-style: italic; color: #666; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <strong>TEXT_ONLY_PORTAL</strong>
+            <ul>
+                <li><a href="#" onclick="location.reload()">Refresh Feed</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content-area">
+            <p class="loading">Fetching content from GitHub...</p>
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        <p><small id="timestamp"></small></p>
+    </footer>
+
+    <script>
+        async function fetchContent() {
+            const remoteUrl = "https://githubusercontent.com";
+            const contentDiv = document.getElementById('content-area');
+            const timeSpan = document.getElementById('timestamp');
+
+            try {
+                // Fetch the raw markdown from GitHub
+                const response = await fetch(remoteUrl);
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const markdownText = await response.text();
+                
+                // Render Markdown to HTML using Marked.js
+                // 'sanitize: false' allows your embedded SVGs to render
+                contentDiv.innerHTML = marked.parse(markdownText);
+                
+                timeSpan.innerText = "Loaded via JS at: " + new Date().toLocaleTimeString();
+            } catch (error) {
+                contentDiv.innerHTML = "<p style='color:red;'>Error loading content: " + error.message + "</p>";
+            }
+        }
+
+        // Initialize on page load
+        window.onload = fetchContent;
+    </script>
+</body>
+</html>
