@@ -8,14 +8,14 @@
 echo "[$(date)] Running common commands..."
 
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/starling.py \
-  -o /home/$USER/.local/bin/starling.py
-/home/$USER/.local/bin/starling.py
+  -o /home/$(id -un)/.local/bin/starling.py
+/home/$(id -un)/.local/bin/starling.py
 
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mm \
-  -o /home/$USER/.local/bin/murmuration.sh
+  -o /home/$(id -un)/.local/bin/murmuration.sh
   
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/hello.php \
-  -o /home/$USER/public_html/hello.php
+  -o /home/$(id -un)/public_html/hello.php
 
 # ==========================================
 # SERVER SPECIFIC COMMANDS
@@ -32,60 +32,60 @@ fi
 if [ "$MURMURATION" = "o" ]; then
     echo "Running commands for Server 'o'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/o-index.html \
-       -o /home/$USER/public_html/index.html
+       -o /home/$(id -un)/public_html/index.html
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$USER/public_html/eval.php
+       -o /home/$(id -un)/public_html/eval.php
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$USER/public_html/eval.php
+       -o /home/$(id -un)/public_html/eval.php
 fi
 
 if [ "$MURMURATION" = "p" ]; then
     echo "Running commands for Server 'p'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/p-index.html \
-       -o /home/$USER/public_html/index.html
+       -o /home/$(id -un)/public_html/index.html
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$USER/public_html/eval.php
+       -o /home/$(id -un)/public_html/eval.php
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$USER/public_html/eval.php 
+       -o /home/$(id -un)/public_html/eval.php 
 fi
 
 if [ "$MURMURATION" = "r" ]; then
     echo "Running commands for Server 'r'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/r-index.html \
-       -o /home/$USER/public_html/index.html
+       -o /home/$(id -un)/public_html/index.html
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$USER/public_html/eval.php
+       -o /home/$(id -un)/public_html/eval.php
 fi
 
 if [ "$MURMURATION" = "t" ]; then
     echo "Running secondary commands for Server 't'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/t-index.html \
-       -o /home/$USER/public_html/index.html
+       -o /home/$(id -un)/public_html/index.html
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$USER/public_html/eval.php
+       -o /home/$(id -un)/public_html/eval.php
 fi
 
 if [ "$MURMURATION" = "u" ]; then
     echo "Running secondary commands for Server 'u'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/u-index.html \
-       -o /home/$USER/public_html/index.html
+       -o /home/$(id -un)/public_html/index.html
     # NO PHP SERVICE
 fi
 
 if [ "$MURMURATION" = "v" ]; then
     echo "Running secondary commands for Server 'v'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/v-index.html \
-       -o /home/$USER/public_html/index.html
+       -o /home/$(id -un)/public_html/index.html
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$USER/public_html/eval.php
+       -o /home/$(id -un)/public_html/eval.php
 fi
 
 if [ "$MURMURATION" = "x" ]; then
     echo "Running commands for Server 'X'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/x-index.html \
-       -o /home/$USER/public_html/index.html
+       -o /home/$(id -un)/public_html/index.html
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$USER/public_html/eval.php
+       -o /home/$(id -un)/public_html/eval.php
 fi
 
 
