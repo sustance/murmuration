@@ -32,46 +32,47 @@ if [ ! -r "$id_file" ]; then
     exit 1
 fi
 
+MURMURATION=$(cat "$id_file")
 
 
-if [ "$id_file" = "o" ]; then
+if [ "$MURMURATION" = "o" ]; then
     echo "Running commands for Server 'o'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/o-index.html \
        -o /home/$(id -un)/public_html/index.html
 fi
 
-if [ "$id_file" = "p" ]; then
+if [ "$MURMURATION" = "p" ]; then
     echo "Running commands for Server 'p'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/p-index.html \
        -o /home/$(id -un)/public_html/index.html
 fi
 
-if [ "$id_file" = "r" ]; then
+if [ "$MURMURATION" = "r" ]; then
     echo "Running commands for Server 'r'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/r-index.html \
        -o /home/$(id -un)/public_html/index.html
 fi
 
-if [ "$id_file" = "t" ]; then
+if [ "$MURMURATION" = "t" ]; then
     echo "Running secondary commands for Server 't'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/t-index.html \
        -o /home/$(id -un)/public_html/index.html
 fi
 
-if [ "$id_file" = "u" ]; then
+if [ "$MURMURATION" = "u" ]; then
     echo "Running secondary commands for Server 'u'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/u-index.html \
        -o /home/$(id -un)/public_html/index.html
     # NO PHP SERVICE
 fi
 
-if [ "$id_file" = "v" ]; then
+if [ "$MURMURATION" = "v" ]; then
     echo "Running secondary commands for Server 'v'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/v-index.html \
        -o /home/$(id -un)/public_html/index.html
 fi
 
-if [ "$id_file" = "x" ]; then
+if [ "$MURMURATION" = "x" ]; then
     echo "Running commands for Server 'X'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/x-index.html \
        -o /home/$(id -un)/public_html/index.html
