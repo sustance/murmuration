@@ -46,15 +46,26 @@ fi
 MURMURATION=$(cat "$id_file")
 echo "[$MURMURATION] Running machine specific commands...
 
+# ==========================================
+# THESE ARE TERMINALS and/or TASK OPTOMISED
+# ==========================================
 
 if [ "$MURMURATION" = "4" ]; then
-    echo "Running commands for Server 'o'..."
+    echo "Running commands for Server '4'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/test.txt \
        -o /home/$(id -un)/.local/bin/test.txt
-    # NO WEB SERVER
+    # May be dedicated to GPU and Video tasks
 fi
 
+if [ "$MURMURATION" = "2" ]; then
+    echo "Running commands for Server '2'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/test.txt \
+       -o /home/$(id -un)/.local/bin/test.txt
+fi
 
+# ==========================================
+# THESE MACHINES ARE THE DOWNSTREAM SWARM
+# ==========================================
 
 if [ "$MURMURATION" = "f" ]; then
     echo "Running commands for Server 'f'..."
