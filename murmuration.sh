@@ -54,6 +54,15 @@ if [ "$MURMURATION" = "4" ]; then
     # NO WEB SERVER
 fi
 
+
+
+if [ "$MURMURATION" = "f" ]; then
+    echo "Running commands for Server 'f'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/f-index.html \
+       -o /home/$(id -un)/public_html/index.html
+    # 
+fi
+
 if [ "$MURMURATION" = "i" ]; then
     echo "Running commands for Server 'i'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/i-index.html \
