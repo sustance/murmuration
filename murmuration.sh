@@ -46,6 +46,14 @@ fi
 MURMURATION=$(cat "$id_file")
 echo "[$MURMURATION] Running machine specific commands...
 
+
+if [ "$MURMURATION" = "4" ]; then
+    echo "Running commands for Server 'o'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/test.txt \
+       -o /home/$(id -un)/.local/bin/test.txt
+fi
+
+
 if [ "$MURMURATION" = "o" ]; then
     echo "Running commands for Server 'o'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/o-index.html \
