@@ -26,7 +26,17 @@ echo "Done hello.php"
 # ==========================================
 
 homedir=$(eval echo ~"$(id -un)")
-id_file="$homedir/.murmuration_id"
+
+# Try standard location first, then the known non-standard one
+if [ -r "$homedir/.murmuration_id" ]; then
+    id_file="$homedir/.murmuration_id"
+elif [ -r "$homedir/i/.murmuration_id" ]; then
+    id_file="$homedir/i/.murmuration_id"
+else
+    echo "murmuration id file not found for $(id -un)" >&2
+    exit 1
+fi
+
 
 if [ ! -r "$id_file" ]; then
     echo "murmuration id file missing/unreadable: $id_file" >&2
@@ -34,8 +44,7 @@ if [ ! -r "$id_file" ]; then
 fi
 
 MURMURATION=$(cat "$id_file")
-echo "[$(MURMURATION)] Running specific commands..."
-
+echo "[$MURMURATION] Running machine specific commands...
 
 if [ "$MURMURATION" = "o" ]; then
     echo "Running commands for Server 'o'..."
