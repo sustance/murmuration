@@ -54,12 +54,20 @@ if [ "$MURMURATION" = "4" ]; then
     # NO WEB SERVER
 fi
 
+if [ "$MURMURATION" = "i" ]; then
+    echo "Running commands for Server 'i'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/i-index.html \
+       -o /home/$(id -un)/public_html/index.html
+    # web seems down
+fi
+
+# Skip j for now
 
 if [ "$MURMURATION" = "n" ]; then
     echo "Running commands for Server 'n'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/n-index.html \
        -o /home/$(id -un)/public_html/index.html
-    # 
+    # Seems limited service, no SSH for now
 fi
 
 if [ "$MURMURATION" = "o" ]; then
