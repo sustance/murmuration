@@ -38,16 +38,12 @@ if [ "$id_file" = "o" ]; then
     echo "Running commands for Server 'o'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/o-index.html \
        -o /home/$(id -un)/public_html/index.html
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$(id -un)/public_html/eval.php
 fi
 
 if [ "$id_file" = "p" ]; then
     echo "Running commands for Server 'p'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/p-index.html \
        -o /home/$(id -un)/public_html/index.html
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$(id -un)/public_html/eval.php 
 fi
 
 if [ "$id_file" = "r" ]; then
