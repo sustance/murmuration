@@ -7,6 +7,7 @@
 # ==========================================
 echo "[$(date)] Running common commands..."
 
+
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/starling.py \
   -o /home/$(id -un)/.local/bin/starling.py
 /home/$(id -un)/.local/bin/starling.py
@@ -33,6 +34,7 @@ if [ ! -r "$id_file" ]; then
 fi
 
 MURMURATION=$(cat "$id_file")
+echo "[$(MURMURATION)] Running specific commands..."
 
 
 if [ "$MURMURATION" = "o" ]; then
