@@ -19,77 +19,66 @@ echo "Done mm"
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/hello.php \
   -o /home/$(id -un)/public_html/hello.php
 echo "Done hello.php"
-# Only this simple one everywhere. eval.php only on effective php sites 
 
 # ==========================================
 # SERVER SPECIFIC COMMANDS
 # ==========================================
 
-# Fail safely if MURMURATION isn't set
-if [ -z "$MURMURATION" ]; then
-    echo "Error: MURMURATION is not set!" >&2
+homedir=$(eval echo ~"$(id -un)")
+id_file="$homedir/.murmuration_id"
+
+if [ ! -r "$id_file" ]; then
+    echo "murmuration id file missing/unreadable: $id_file" >&2
     exit 1
 fi
 
 
 
-if [ "$MURMURATION" = "o" ]; then
+if [ "$id_file" = "o" ]; then
     echo "Running commands for Server 'o'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/o-index.html \
        -o /home/$(id -un)/public_html/index.html
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
        -o /home/$(id -un)/public_html/eval.php
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$(id -un)/public_html/eval.php
 fi
 
-if [ "$MURMURATION" = "p" ]; then
+if [ "$id_file" = "p" ]; then
     echo "Running commands for Server 'p'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/p-index.html \
        -o /home/$(id -un)/public_html/index.html
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$(id -un)/public_html/eval.php
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
        -o /home/$(id -un)/public_html/eval.php 
 fi
 
-if [ "$MURMURATION" = "r" ]; then
+if [ "$id_file" = "r" ]; then
     echo "Running commands for Server 'r'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/r-index.html \
        -o /home/$(id -un)/public_html/index.html
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$(id -un)/public_html/eval.php
 fi
 
-if [ "$MURMURATION" = "t" ]; then
+if [ "$id_file" = "t" ]; then
     echo "Running secondary commands for Server 't'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/t-index.html \
        -o /home/$(id -un)/public_html/index.html
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$(id -un)/public_html/eval.php
 fi
 
-if [ "$MURMURATION" = "u" ]; then
+if [ "$id_file" = "u" ]; then
     echo "Running secondary commands for Server 'u'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/u-index.html \
        -o /home/$(id -un)/public_html/index.html
     # NO PHP SERVICE
 fi
 
-if [ "$MURMURATION" = "v" ]; then
+if [ "$id_file" = "v" ]; then
     echo "Running secondary commands for Server 'v'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/v-index.html \
        -o /home/$(id -un)/public_html/index.html
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$(id -un)/public_html/eval.php
 fi
 
-if [ "$MURMURATION" = "x" ]; then
+if [ "$id_file" = "x" ]; then
     echo "Running commands for Server 'X'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/x-index.html \
        -o /home/$(id -un)/public_html/index.html
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/eval.php \
-       -o /home/$(id -un)/public_html/eval.php
 fi
 
 
