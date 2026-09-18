@@ -58,24 +58,28 @@ if [ "$MURMURATION" = "o" ]; then
     echo "Running commands for Server 'o'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/o-index.html \
        -o /home/$(id -un)/public_html/index.html
+    # no PHP or HTML served on web  (local PHP ok)
 fi
 
 if [ "$MURMURATION" = "p" ]; then
     echo "Running commands for Server 'p'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/p-index.html \
        -o /home/$(id -un)/public_html/index.html
+    # NO PHP SERVICE (local PHP ok)
 fi
 
 if [ "$MURMURATION" = "r" ]; then
     echo "Running commands for Server 'r'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/r-index.html \
        -o /home/$(id -un)/public_html/index.html
+    # WORKING PHP SERVICE, CURRENT AND DEFAULT PAGE IS HTML
 fi
 
 if [ "$MURMURATION" = "t" ]; then
     echo "Running secondary commands for Server 't'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/t-index.html \
        -o /home/$(id -un)/public_html/index.html
+   # WORKING PHP SERVICE, BUT SSH CURRENTLY DOWN SO CANT CONFIGURE
 fi
 
 if [ "$MURMURATION" = "u" ]; then
@@ -89,12 +93,14 @@ if [ "$MURMURATION" = "v" ]; then
     echo "Running secondary commands for Server 'v'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/v-index.html \
        -o /home/$(id -un)/public_html/index.html
+    # server completely down
 fi
 
 if [ "$MURMURATION" = "x" ]; then
     echo "Running commands for Server 'X'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/x-index.html \
        -o /home/$(id -un)/public_html/index.html
+    # No web service here
 fi
 
 
