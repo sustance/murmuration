@@ -51,6 +51,7 @@ if [ "$MURMURATION" = "4" ]; then
     echo "Running commands for Server 'o'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/test.txt \
        -o /home/$(id -un)/.local/bin/test.txt
+    # NO WEB SERVER
 fi
 
 
@@ -93,14 +94,14 @@ if [ "$MURMURATION" = "v" ]; then
     echo "Running secondary commands for Server 'v'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/v-index.html \
        -o /home/$(id -un)/public_html/index.html
-    # server completely down
+    # server completely down (common problem)
 fi
 
 if [ "$MURMURATION" = "x" ]; then
     echo "Running commands for Server 'X'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/x-index.html \
        -o /home/$(id -un)/public_html/index.html
-    # No web service here
+    # MOSTLY DOWN, ssh OK, No PHP, web. Lynx local only
 fi
 
 
