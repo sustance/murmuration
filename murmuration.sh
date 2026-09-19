@@ -65,6 +65,7 @@ if [ "$MURMURATION" = "3" ]; then
     # (Asus_RT-AX3000/Asus_RT-AX3000.md) ASUSWRT-Merlin RT-AX58U_V2 3004.388.11_1-gnuton1 
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/test.txt \
        -o /home/$(id -un)/.local/bin/test.txt
+    # ASUSWRT-Merlin has specific need to recover config from special persistent folder on reboot  
 fi
 
 
