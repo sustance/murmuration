@@ -15,7 +15,7 @@ geography of fixed servers:
   - East Asia
   - North America
   - Europe Mostly DE
-geography of users laptop roams:
+common roaming of the users laptop:
   - Hong Kong
   - East Asia
   - Western Eupope
@@ -43,30 +43,11 @@ code, reads its own local environment, and assembles itself.
 
 ## Philosophy: a swarm, not a fleet
 
-A *fleet* is pushed: a central commander sends orders and uniformity is
-imposed from above (Ansible, Salt, MDM). A *swarm* is pulled: each unit
-follows a shared rulebook, senses local conditions, and self-assembles.
-
-This project is unambiguously a swarm:
-
 - **Pull, never push.** No orchestrator, no dashboard, no control channel.
 Each machine wakes on cron, pulls this repo, and applies it locally. There
 is no single point of failure because there is no point of control.
 - **The repo is the machine; a host is a body.** Everything that makes a
 machine *yours* lives here, not on its disk. A fresh mini# murmuration
-
-One mind, many machines.
-
-Personal environment and tooling for a small swarm — three Debian laptops and a
-dozen Linux/BSD servers — shared as a single public repository. No root
-anywhere, no orchestrator, nothing pushed.
-
-A murmuration is a flock of starlings: thousands of birds, no leader, no
-central controller. Each bird follows the same simple rules, senses only its
-immediate surroundings — and from that, coherent flock-scale behaviour
-emerges. This repository works the same way. Every machine carries identical
-code, reads its own local environment, and assembles itself.
-
 
 ## How a host joins
 
@@ -74,62 +55,36 @@ code, reads its own local environment, and assembles itself.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/USER/murmuration/main/murmuration.sh)"
 ```
 
-`murmuration.sh` needs only `sh` plus one of `curl`, `wget`, FreeBSD `fetch`,
-or `python3` (guaranteed), plus `tar`. If `git` is available it clones; it
-falls back to fetching and extracting a tarball, and the updater handles both
-paths. Then it runs `install.sh`, which links everything into `$HOME`.
-
-New host? Create `hosts/<name>.sh` in the web editor, run the command above
-on the machine, done.
+`murmuration.sh` needs only `sh` plus`curl`, FreeBSD `fetch`, or `python3`, plus `tar`. 
 
 ## Layout
 
-```javascript
+```
 murmuration/
 ├── README.md               # this file
 ├── LICENSE                 # MIT (or BSD-2)
 ├── murmuration.sh            # the only file ever curl-piped
-├── install.sh              # idempotent: (re)links everything into $HOME
-├── lib/
-│   ├── common.sh           # log, have(), die()
-│   └── host.sh             # resolves hostname -> host profile
-├── hosts/
-│   ├── default.sh          # fallback profile (variables only)
-│   └── <one file per host> # created via the GitHub web editor
 ├── .local/bin/             # portable tools, symlinked into ~/bin
-│   ├── f-update            # git pull, or tarball refetch
-│   ├── f-session           # tmux session builder (attach-or-build)
-│   └── ...tasks...         # plain-text in, plain-text out
-├── monitors/               # each prints plain text; run-all aggregates
-│   ├── run-all.sh
-│   └── load.sh battery.sh disk.sh ...
 ├── tmux/tmux.conf          # status line reads the monitor state file
-├── shell/rc                # PATH, aliases; sourced from ~/.profile
 ├── cron/crontab.example    # installed per-host with: crontab cron/crontab.example
-└── docs/philosophy.md      # the long version, for future-me
 ```
 
 ## Host profiles
 
-This project is in public domain and I don't want to to declare machine identities so they are individually identified in murmuration_id by a my own name system.
+This project is in public domain and I don't want to expose real identities so i 
+declared in murmuration_id by a my own name system.
 
-Some hosts have user accounts sub directoried bt first username letter therefore 
+Some hosts have user accounts sub directoried by username first letter therefore 
 id-file fallback (.murmuration_id vs i/.murmuration_id). 
 
-The objective later is to break the servers into peer groups based on latency/reliability and other things.
+The objective later is to segment the servers into peer groups based on latency/reliability 
+and other things and batch process.
 For now each machine is iterated separately an inefficiently. but in time it will be resolved but probably needs some detailed statistics collection first to be rational.
 
-The entire per-host difference is one small file of variables:
-
-```sh
-# hosts/lap1.sh
-ROLE=laptop                 # laptop | server
-MONITORS="load disk battery net"   # which monitors/run-all.sh runs
-HAS_BATTERY=1
-```
-
-Scripts branch on these; they never contain per-host logic. The repo is the
-whole flock's brain; each host reads its own page.
+## Checking and control
+This is a single simple user project. me or anyone who copies it. 
+All errors will show up in starling.py output. 
+At this stage there is no plan past making starling.py more informative 
 
 ## Publishing use
 - Each starling and the whole murmuration publishes a complete presence on
@@ -190,11 +145,8 @@ Every alert automated deletes a window you would otherwise keep open.
 
 ## Sync discipline
 
-- Edit on GitHub (web). Push nowhere else matters.
-- Machines run `f-update` from cron every ~15 minutes; they pull, they
-never commit.
-- Edit on one machine only — the daily-driver laptop — or you will meet
-merge conflicts that your memory will not thank you for.
+- Edit on GitHub (web) for now. Push nowhere else matters.
+- Machines run cron every day; they pull, they never commit.
 
 ## Why it looks like this
 
@@ -219,14 +171,13 @@ place.
 
 ## Status
 
-murmuration bootstrap, installer, host profiles, and the first monitors on the three
+murmuration installer, host profiles, and the first monitors on the three
 laptops. The structure is sized for the flock, but every directory must
-earn its place — add the rest only when it is needed.mal install plus
-one command reproduces your environment — that command *is* the backup.
+earn its place.
 - **Identical rules, local sensing.** Every host runs identical bytes, reads
 its own hostname and hardware, and expresses a different configuration
 from the same source. Differentiation emerges; it is never pushed.
-- **Edit on GitHub; hosts only pull.** The single editor of record is the
+- **Edit on GitHub (for now); hosts only pull.** The single editor of record is the
 GitHub web UI. Machines never commit. An edit reaches every host within
 about 15 minutes via cron — no SSH required.
 
@@ -259,17 +210,13 @@ pull. If a host's real name is sensitive, give its profile an alias.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/USER/murmuration/main/murmuration.sh)"
 ```
 
-`murmuration.sh` needs only `sh` plus one of `curl`, `wget`, FreeBSD `fetch`,
-or `python3` (guaranteed), plus `tar`. If `git` is available it clones; it
-falls back to fetching and extracting a tarball, and the updater handles both
-paths. Then it runs `install.sh`, which links everything into `$HOME`.
-
-New host? Create `hosts/<name>.sh` in the web editor, run the command above
-on the machine, done.
+`murmuration.sh` needs only `sh` plus one of `curl`, FreeBSD `fetch`, plus `tar`. 
+Possibly if `git` is available it clones; it MAY fall back to fetching and extracting a tarball, 
+and the updater handles bot paths. Then it runs `install.sh`, which links everything into `$HOME`.
 
 ## Source of truth
 - At inception the core assets are stored on github.
-- This is to be duplicated across starling machines to gain sovereignty.
+- Plan is to duplicated this across starling machines to gain sovereignty.
 - Eventually the whole system seeks to become soverign.
 
 ## Transparency.
