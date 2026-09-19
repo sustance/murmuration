@@ -67,24 +67,6 @@ immediate surroundings — and from that, coherent flock-scale behaviour
 emerges. This repository works the same way. Every machine carries identical
 code, reads its own local environment, and assembles itself.
 
-#
-
-## Hard rules
-
-1. **POSIX sh only.** `#!/bin/sh`, safe for dash and BSD sh alike. No
-bashisms. Python 3 is the escape hatch — it exists on every host.
-2. **No root, ever.** Everything installs under `$HOME`.
-3. **Per-host differences live only in `hosts/<name>.sh`.** Variables, not
-logic. Everything else is identical bytes on every machine.
-4. **Task scripts print plain text.** Menus, Openbox XML, tmux status lines
-and alerts are *renderers* — rendering is always a separate layer, never
-the task's job. XML lives in exactly one place.
-5. **Sessions are built, never grown.** Every tmux session is created by an
-idempotent script, safe to re-run from cron. If you cannot rebuild it,
-it is already technical debt. "Always on" means restarts are automated
-and invisible, not that nothing ever restarts.
-6. **Nothing secret in this repo.** Public, so hosts need no credentials to
-pull. If a host's real name is sensitive, give its profile an alias.
 
 ## How a host joins
 
