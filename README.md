@@ -126,6 +126,12 @@ murmuration/
 
 ## Host profiles
 
+Some hosts have user accounts sub directoried bt first username letter therefore 
+id-file fallback (.murmuration_id vs i/.murmuration_id). 
+
+The objective later is to break the servers into peer groups based on latency/reliability and other things.
+For now each machine is iterated separately an inefficiently. but in time it will be resolved but probably needs some detailed statistics collection first to be rational.
+
 The entire per-host difference is one small file of variables:
 
 ```sh
@@ -143,8 +149,8 @@ whole flock's brain; each host reads its own page.
   Web, Gemini, Gopher and other networks.
 - The murmuration is tasked to provide stability and Latency advantages over
   the relative instability of the individual starling nodes.
-- Tests for unresponsive or high latency nodes need to be develped and systems
-  to provide auto-repair.
+- Tests for unresponsive or high latency nodes and systems
+  to provide auto-repair need to be develped.
 
 ## Daily use
 
@@ -275,9 +281,9 @@ New host? Create `hosts/<name>.sh` in the web editor, run the command above
 on the machine, done.
 
 ## Source of truth
-- At inception the core assets ate stored on github.
-- Firstly this is to be duplicated on multiple resilient machines to get some soverignty.
-- In time the whole system seeks to become soverign.
+- At inception the core assets are stored on github.
+- This is to be duplicated across starling machines to gain sovereignty.
+- Eventually the whole system seeks to become soverign.
 
 ## Transparency.
  - This system operates over sensitive borders and should be transparent and open to inspection. secure shell is to be regared as inspectable and not attempt to conceal anything
