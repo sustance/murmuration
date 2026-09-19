@@ -47,7 +47,7 @@ if [ ! -r "$id_file" ]; then
 fi
 
 MURMURATION=$(cat "$id_file")
-echo "[$MURMURATION] Running machine specific commands...
+echo "[$MURMURATION] Running machine specific commands..."
 
 # ==========================================
 # PHYSICAL ACCESS. NO INTERACTION
