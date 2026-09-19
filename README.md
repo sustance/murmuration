@@ -1,10 +1,15 @@
 # murmuration
 ---
 name: murmuration
+
 objective: from simple rules enable emergent whole swarm behavior
+
 entry point file: murmuration.sh
+
 execution model: cron-pulled, no push
+
 host-identity: ~/.local/bin/murmuration_id
+
 objective: manage existing computers as a simple swarm
 
 code:
