@@ -13,7 +13,7 @@ host-identity: ~/.local/bin/murmuration_id
 objective: manage existing computers as a simple swarm
 
 code:
-  - Sh  (plus Bash)
+  - Sh  (Bash if need)
   - Python
   - YAML
   - PHP
