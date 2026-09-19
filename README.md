@@ -5,24 +5,29 @@ entry point file: murmuration.sh
 execution model: cron-pulled, no push
 host-identity: ~/.local/bin/murmuration_id
 objective: manage existing computers as a simple swarm
+
 code:
   - Sh  (plus Bash)
   - Python
   - YAML
   - PHP
+  - 
 geography of fixed servers:
   - Hong Kong
   - East Asia
   - North America
   - Europe Mostly DE
+  - 
 common roaming of the users laptop:
   - Hong Kong
   - East Asia
   - Western Eupope
+  - 
 sophistication:
   - currently primordial, limited error checking ok for now
   - concentrating on assigning code flows /roles to machines
   - still determining logical functional groupings
+    
 data-hub:
   - Initially github
   - Aspiration, the system is hub-less
