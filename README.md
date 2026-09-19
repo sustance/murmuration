@@ -1,9 +1,35 @@
 # murmuration
+---
+# Overview
+name: murmuration
+objective: manage existing computers as a simple swarm
+code:
+  - Sh  (plus Bash)
+  - Python
+  - YAML
+  - PHP
+geography of fixed servers:
+  - Hong Kong
+  - East Asia
+  - North America
+  - Europe Mostly DE
+geography of users laptop roams:
+  - Hong Kong
+  - East Asia
+  - Western Eupope
+sophistication:
+  - currently primordial, limited error checking
+  - concentrating on assigning code/roles to machines
+  - determining logical functional groupings
+data-hub:
+  - Initially github
+  - Aspiration, the system is hub-less
+---
 
 One mind, many machines.
 
 Personal environment and tooling for a small swarm/fleet — three Debian 
-laptops, some repuposed routers with attached storage and a
+laptops, some re-puposed routers with attached storage and a
 dozen Linux/BSD servers — shared as a single public repository. No root
 anywhere, no orchestrator, nothing pushed.
 
@@ -39,32 +65,7 @@ immediate surroundings — and from that, coherent flock-scale behaviour
 emerges. This repository works the same way. Every machine carries identical
 code, reads its own local environment, and assembles itself.
 
-## Philosophy: a swarm, not a fleet
-
-A *fleet* is pushed: a central commander sends orders and uniformity is
-imposed from above (Ansible, Salt, MDM). A *swarm* is pulled: each unit
-follows a shared rulebook, senses local conditions, and self-assembles.
-
-This project is unambiguously a swarm:
-
-- **Pull, never push.** No orchestrator, no dashboard, no control channel.
-Each machine wakes on cron, pulls this repo, and applies it locally. There
-is no single point of failure because there is no point of control.
-- **The repo is the machine; a host is a body.** Everything that makes a
-machine *yours* lives here, not on its disk. A fresh minimal install plus
-one command reproduces your environment — that command *is* the backup.
-- **Identical rules, local sensing.** Every host runs identical bytes, reads
-its own hostname and hardware, and expresses a different configuration
-from the same source. Differentiation emerges; it is never pushed.
-- **Edit on GitHub; hosts only pull.** The single editor of record is the
-GitHub web UI. Machines never commit. An edit reaches every host within
-about 15 minutes via cron — no SSH required.
-
-This framing is load-bearing, not decorative: whenever a future design
-question arises (should machines report back? should there be a control
-panel? should a host push its state?), the answer is *no* — those things
-convert a swarm back into a fleet and reintroduce the central point of
-failure this design exists to avoid.
+#
 
 ## Hard rules
 
@@ -125,6 +126,8 @@ murmuration/
 ```
 
 ## Host profiles
+
+This project is in public domain and I don't want to to declare machine identities so they are individually identified in murmuration_id by a my own name system.
 
 Some hosts have user accounts sub directoried bt first username letter therefore 
 id-file fallback (.murmuration_id vs i/.murmuration_id). 
