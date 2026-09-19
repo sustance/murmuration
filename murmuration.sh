@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
 #!/bin/sh
 # murmururation.sh - Sourced from GitHub, MAKE IT EXECUTABLE
+# AI collaboration links
+# https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/README.md
+# https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/murmuration.sh
 
 # ==========================================
 # COMMON COMMANDS (Runs on ALL servers)
@@ -48,8 +51,10 @@ echo "[$MURMURATION] Running machine specific commands...
 
 # ==========================================
 # PHYSICAL ACCESS. NO INTERACTION
+# Longer term soverign replacemebt for github. meanwhile parellel function
 # these machines are typically repurposed hubs like wifi routers with attached ssd storage. 
 # They feature true 1G network and high resilience/recovery to power failure. 
+# Local/low latency to terminal machines
 # They lose their config on crash and need to seek or receive reconfiguration.
 #    They will duplicate github functions for soverignity purposes
 #    They will additionally be writable for bachup purposes
@@ -57,7 +62,7 @@ echo "[$MURMURATION] Running machine specific commands...
 # they lose their config on crash and need to seek or receive  new config from github on power on.
 if [ "$MURMURATION" = "3" ]; then
     echo "Running commands for Server '3'..."
-    # Asus_RT-AX3000](Asus_RT-AX3000/Asus_RT-AX3000.md) 
+    # (Asus_RT-AX3000/Asus_RT-AX3000.md) ASUSWRT-Merlin RT-AX58U_V2 3004.388.11_1-gnuton1 
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/test.txt \
        -o /home/$(id -un)/.local/bin/test.txt
 fi
