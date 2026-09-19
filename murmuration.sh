@@ -46,9 +46,19 @@ fi
 MURMURATION=$(cat "$id_file")
 echo "[$MURMURATION] Running machine specific commands...
 
+
+# PHYSICAL ACCESS. NO INTERACTION
+# these machines are typically repurposed hubs like wifi routers. 
+# Their role is true 1G network and high resilience to power failure. They have a role in recivering from crashes. They may als use attached storage
+
+# they lose their config on crash and need to seek or receive  new config from github on power on.
+
+
+
 # ==========================================
 # THESE ARE TERMINALS and/or TASK OPTOMISED
 # ==========================================
+# PHYSICAL ACCESS. KEYBOARD & SCREEN
 
 if [ "$MURMURATION" = "4" ]; then
     echo "Running commands for Server '4'..."
@@ -66,6 +76,7 @@ fi
 # ==========================================
 # THESE MACHINES ARE THE DOWNSTREAM SWARM
 # ==========================================
+# NO ACCESS EXCEPT SSH WEB GOPHER
 
 if [ "$MURMURATION" = "f" ]; then
     echo "Running commands for Server 'f'..."
