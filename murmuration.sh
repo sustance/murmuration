@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 #!/bin/sh
 # murmururation.sh - Sourced from GitHub, MAKE IT EXECUTABLE
-# AI collaboration links
-# https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/README.md
-# https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/murmuration.sh
+# AI brief 
+# Define objective https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/README.md
+# Master configurator https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/murmuration.sh
 
 # ==========================================
 # COMMON COMMANDS (Runs on ALL servers)
@@ -73,6 +73,9 @@ fi
 # ==========================================
 # PHYSICAL ACCESS. KEYBOARD & SCREEN
 
+# add 3
+# add 8
+
 if [ "$MURMURATION" = "4" ]; then
     echo "Running commands for Server '4'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/test.txt \
@@ -90,6 +93,11 @@ fi
 # THESE MACHINES ARE THE DOWNSTREAM SWARM
 # ==========================================
 # NO ACCESS EXCEPT SSH WEB GOPHER
+
+# add b
+# add c
+# add d 
+# add e
 
 if [ "$MURMURATION" = "f" ]; then
     echo "Running commands for Server 'f'..."
