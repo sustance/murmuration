@@ -1,7 +1,9 @@
 # murmuration
 ---
-# Overview
 name: murmuration
+entry point file: murmuration.sh
+execution model: cron-pulled, no push
+host-identity: ~/.local/bin/murmuration_id
 objective: manage existing computers as a simple swarm
 code:
   - Sh  (plus Bash)
@@ -18,13 +20,13 @@ geography of users laptop roams:
   - East Asia
   - Western Eupope
 sophistication:
-  - currently primordial, limited error checking
-  - concentrating on assigning code/roles to machines
-  - determining logical functional groupings
+  - currently primordial, limited error checking ok for now
+  - concentrating on assigning code flows /roles to machines
+  - still determining logical functional groupings
 data-hub:
   - Initially github
   - Aspiration, the system is hub-less
----
+...
 
 One mind, many machines.
 
