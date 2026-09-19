@@ -1,6 +1,7 @@
 # murmuration
 ---
 name: murmuration
+objective: from simple rules enable emergent whole swarm behavior
 entry point file: murmuration.sh
 execution model: cron-pulled, no push
 host-identity: ~/.local/bin/murmuration_id
@@ -11,18 +12,18 @@ code:
   - Python
   - YAML
   - PHP
-  - 
+
 geography of fixed servers:
   - Hong Kong
   - East Asia
   - North America
   - Europe Mostly DE
-  - 
+
 common roaming of the users laptop:
   - Hong Kong
   - East Asia
   - Western Eupope
-  - 
+
 sophistication:
   - currently primordial, limited error checking ok for now
   - concentrating on assigning code flows /roles to machines
