@@ -273,3 +273,11 @@ paths. Then it runs `install.sh`, which links everything into `$HOME`.
 
 New host? Create `hosts/<name>.sh` in the web editor, run the command above
 on the machine, done.
+
+## Source of truth
+- At inception the core assets ate stored on github.
+- Firstly this is to be duplicated on multiple resilient machines to get some soverignty.
+- In time the whole system seeks to become soverign.
+
+## Transparency.
+ - This system operates over sensitive borders and should be transparent and open to inspection. secure shell is to be regared as inspectable and not attempt to conceal anything
