@@ -72,12 +72,15 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/USER/murmuration/main/murm
 
 ```
 murmuration/
-├── README.md               # this file
-├── LICENSE                 # MIT (or BSD-2)
-├── murmuration.sh            # the only file ever curl-piped
-├── .local/bin/             # portable tools, symlinked into ~/bin
-├── tmux/tmux.conf          # status line reads the monitor state file
-├── cron/crontab.example    # installed per-host with: crontab cron/crontab.example
+├── README.md                  # this file
+├── LICENSE                    # BSD-2
+├── murmuration.sh             # the only file ever curl-piped
+├── murmuration_id             # the starlings name
+├── .local/bin/                # portable tools, symlinked into ~/bin
+├── .local/bin/starling.py     # collects stats, errors, statees
+├── .public_html/starling.json # above data for collection
+├── tmux/tmux.conf             # status line reads the monitor state file
+├── crontab                    # installed per-host (manual paths and id)
 ```
 
 ## Host profiles
