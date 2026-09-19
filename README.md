@@ -2,7 +2,8 @@
 
 One mind, many machines.
 
-Personal environment and tooling for a small swarm/fleet — three Debian laptops and a
+Personal environment and tooling for a small swarm/fleet — three Debian 
+laptops, some repuposed routers with attached storage and a
 dozen Linux/BSD servers — shared as a single public repository. No root
 anywhere, no orchestrator, nothing pushed.
 
@@ -28,7 +29,7 @@ machine *yours* lives here, not on its disk. A fresh mini# murmuration
 
 One mind, many machines.
 
-Personal environment and tooling for a small fleet — three Debian laptops and a
+Personal environment and tooling for a small swarm — three Debian laptops and a
 dozen Linux/BSD servers — shared as a single public repository. No root
 anywhere, no orchestrator, nothing pushed.
 
@@ -138,9 +139,12 @@ Scripts branch on these; they never contain per-host logic. The repo is the
 whole flock's brain; each host reads its own page.
 
 ## Publishing use
-- Each starling and the whole murmuration publishes a complete presence on Web, Gemini, Gopher and other networks.
-- The murmuration is tasked to provide stability and Latency advantages over the relative instability of the individual starling nodes.
-- Tests for unresponsive or high latency nodes need to be develped and systems to provide auto-repair.
+- Each starling and the whole murmuration publishes a complete presence on
+  Web, Gemini, Gopher and other networks.
+- The murmuration is tasked to provide stability and Latency advantages over
+  the relative instability of the individual starling nodes.
+- Tests for unresponsive or high latency nodes need to be develped and systems
+  to provide auto-repair.
 
 ## Daily use
 
@@ -269,106 +273,3 @@ paths. Then it runs `install.sh`, which links everything into `$HOME`.
 
 New host? Create `hosts/<name>.sh` in the web editor, run the command above
 on the machine, done.
-
-## Layout
-
-```javascript
-murmuration/
-├── README.md               # this file
-├── LICENSE                 # MIT (or BSD-2)
-├── murmuration.sh            # the only file ever curl-piped
-├── install.sh              # idempotent: (re)links everything into $HOME
-├── lib/
-│   ├── common.sh           # log, have(), die()
-│   └── host.sh             # resolves hostname -> host profile
-├── hosts/
-│   ├── default.sh          # fallback profile (variables only)
-│   └── <one file per host> # created via the GitHub web editor
-├── .local/bin/                    # portable tools, symlinked into ~/bin
-│   ├── f-update            # git pull, or tarball refetch
-│   ├── f-session           # tmux session builder (attach-or-build)
-│   └── ...tasks...         # plain-text in, plain-text out
-├── monitors/               # each prints plain text; run-all aggregates
-│   ├── run-all.sh
-│   └── load.sh battery.sh disk.sh ...
-├── tmux/tmux.conf          # status line reads the monitor state file
-├── shell/rc                # PATH, aliases; sourced from ~/.profile
-├── cron/crontab.example    # installed per-host with: crontab cron/crontab.example
-└── docs/philosophy.md      # the long version, for future-me
-```
-
-## Host profiles
-
-The entire per-host difference is one small file of variables:
-
-```sh
-# hosts/lap1.sh
-ROLE=laptop                 # laptop | server
-MONITORS="load disk battery net"   # which monitors/run-all.sh runs
-HAS_BATTERY=1
-```
-
-Scripts branch on these; they never contain per-host logic. The repo is the
-whole flock's brain; each host reads its own page.
-
-## Daily use
-
-- **`work`** — attach to your main tmux session, building it if absent:
-named windows for status, logs, and a shell. One window on a small screen
-beats three terminals.
-- **`tasks`** — fzf picker over the task scripts. From a GUI, the same
-scripts appear as an Openbox pipe menu (two thin renderers, one source).
-- **Monitors** run detached in a tmux session named `mon`, rebuilt nightly
-so long-running processes never rot on never-rebooted machines.
-- **Glance data** (battery, load) renders in the tmux status line from the
-monitor state file — always visible, zero keypresses.
-
-## Information tiers
-
-Information is tiered by how it should reach you — this is what makes a
-small screen a non-issue:
-
-| Tier | What | Medium |
-| --- | --- | --- |
-| Glance | Numbers: battery, load, disk | tmux `status-right`, always visible |
-| Watch | Streams: logs, journals | detached `mon` session, one window per stream |
-| Alert | Conditions: disk >90%, service down, battery <20% | cron writes a flag the status line shows; `notify-send` on laptops |
-
-> You should not watch monitors; monitors should tell you when to look.
-
-Every alert automated deletes a window you would otherwise keep open.
-
-## Sync discipline
-
-- Edit on GitHub (web). Push nowhere else matters.
-- Machines run `f-update` from cron every ~15 minutes; they pull, they
-never commit.
-- Edit on one machine only — the daily-driver laptop — or you will meet
-merge conflicts that your memory will not thank you for.
-
-## Why it looks like this
-
-This repo grew out of an Openbox `menu.xml` that had become a memory
-crutch: dozens of entries whose only purpose was storing commands that were
-hard to remember. The escape path, in order:
-
-1. **Tasks are scripts, not menu entries.** Plain text in, plain text out;
-the menu (or fzf, or a keybind) is just a renderer over them.
-2. **The session is the unit, not the task.** Things needed every session
-belong in a built tmux session, not behind a selector.
-3. **Frequency picks the interface.** Every session → builder script;
-occasionally → fzf; rarely → shell history. One medium serving all three
-frequencies is what made the original menu bloat.
-4. **A terminal is a portal.** One fullscreen local tmux; remote hosts are
-windows inside it (`ssh -t host tmux new-session -A -s main`). Every
-host behaves identically because every host runs these same bytes.
-5. **Which led here.** The three laptops wanted identical config, the
-servers wanted the same monitoring without root and without bash, and
-the only sustainable answer was one repo, pulled by all, edited in one
-place.
-
-## Status
-
-murmuration, installer, host profiles, and the first monitors on the three
-laptops. The structure is sized for the flock, but every directory must
-earn its place — add the rest only when it is needed.
