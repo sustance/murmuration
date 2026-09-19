@@ -46,13 +46,21 @@ fi
 MURMURATION=$(cat "$id_file")
 echo "[$MURMURATION] Running machine specific commands...
 
-
+# ==========================================
 # PHYSICAL ACCESS. NO INTERACTION
-# these machines are typically repurposed hubs like wifi routers. 
-# Their role is true 1G network and high resilience to power failure. They have a role in recivering from crashes. They may als use attached storage
+# these machines are typically repurposed hubs like wifi routers with attached ssd storage. 
+# They feature true 1G network and high resilience/recovery to power failure. 
+# They lose their config on crash and need to seek or receive reconfiguration.
+#    They will duplicate github functions for soverignity purposes
+#    They will additionally be writable for bachup purposes
 
 # they lose their config on crash and need to seek or receive  new config from github on power on.
-
+if [ "$MURMURATION" = "3" ]; then
+    echo "Running commands for Server '3'..."
+    # Asus_RT-AX3000](Asus_RT-AX3000/Asus_RT-AX3000.md) 
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/test.txt \
+       -o /home/$(id -un)/.local/bin/test.txt
+fi
 
 
 # ==========================================
