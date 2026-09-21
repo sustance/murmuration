@@ -102,8 +102,8 @@ fi
 
 if [ "$MURMURATION" = "c" ]; then
     echo "Running commands for Server 'c'..."
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/c-index.html \
-       -o /home/$(id -un)/public_html/index.html
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/c-index.php \
+       -o /home/$(id -un)/public_html/index.php
     # 
 fi
 
