@@ -10,7 +10,6 @@
 # ==========================================
 echo "[$(date)] Running common commands..."
 
-
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/starling.py \
   -o /home/$(id -un)/.local/bin/starling.py
 /home/$(id -un)/.local/bin/starling.py
@@ -26,6 +25,8 @@ echo "Done hello.php"
 
 # ==========================================
 # SERVER SPECIFIC COMMANDS
+# Objective is that each server or group of servers ha specialized roles.
+# any repetition here is temporary and will move to all or group  
 # ==========================================
 
 homedir=$(eval echo ~"$(id -un)")
@@ -74,9 +75,6 @@ fi
 # ==========================================
 # PHYSICAL ACCESS. KEYBOARD & SCREEN
 
-# add 3
-# add 8
-
 if [ "$MURMURATION" = "4" ]; then
     echo "Running commands for Server '4'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/test.txt \
@@ -95,10 +93,34 @@ fi
 # ==========================================
 # NO ACCESS EXCEPT SSH WEB GOPHER
 
-# add b
-# add c
-# add d 
-# add e
+
+if [ "$MURMURATION" = "b" ]; then
+    echo "Running commands for Server 'b'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/b-index.html \
+       -o /home/$(id -un)/public_html/index.html
+    # 
+fi
+
+if [ "$MURMURATION" = "c" ]; then
+    echo "Running commands for Server 'c'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/c-index.html \
+       -o /home/$(id -un)/public_html/index.html
+    # 
+fi
+
+if [ "$MURMURATION" = "d" ]; then
+    echo "Running commands for Server 'd'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/d-index.html \
+       -o /home/$(id -un)/public_html/index.html
+    # 
+fi
+
+if [ "$MURMURATION" = "e" ]; then
+    echo "Running commands for Server 'e'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/e-index.html \
+       -o /home/$(id -un)/public_html/index.html
+    # 
+fi
 
 if [ "$MURMURATION" = "f" ]; then
     echo "Running commands for Server 'f'..."
