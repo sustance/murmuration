@@ -92,36 +92,44 @@ fi
 if [ "$MURMURATION" = "b" ]; then
     echo "Running commands for Server 'b'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/b-index.php -o /home/$(id -un)/public_html/index.php
-    # 
+    echo "Done index.php" 
 fi
 
 if [ "$MURMURATION" = "c" ]; then
     echo "Running commands for Server 'c'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/c-index.php -o /home/$(id -un)/public_html/index.php
-    # 
+    echo "Done index.php"  
 fi
 
 if [ "$MURMURATION" = "d" ]; then
     echo "Running commands for Server 'd'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/d-index.html -o /home/$(id -un)/public_html/index.html
-    # 
+    echo "Done index.html"  
 fi
 
 if [ "$MURMURATION" = "e" ]; then
     echo "Running commands for Server 'e'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/e-index.html -o /home/$(id -un)/public_html/index.html
-    # 
+    echo "Done index.html"  
 fi
 
 if [ "$MURMURATION" = "f" ]; then
     echo "Running commands for Server 'f'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/f-index.html -o /home/$(id -un)/public_html/index.html
-    # 
+    echo "Done index.html" 
+fi
+
+if [ "$MURMURATION" = "g" ]; then
+    echo "Running commands for Server 'g'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/i-index.html -o /home/$(id -un)/public_html/index.html
+    echo "Done index.html"
+    # web seems down
 fi
 
 if [ "$MURMURATION" = "i" ]; then
     echo "Running commands for Server 'i'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/i-index.html -o /home/$(id -un)/public_html/index.html
+    echo "Done index.html"
     # web seems down
 fi
 
