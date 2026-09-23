@@ -135,7 +135,7 @@ if [ "$MURMURATION" = "i" ]; then
 fi
 
 if [ "$MURMURATION" = "j" ]; then
-    echo "Running commands for Server 'i'..."
+    echo "Running commands for Server 'j'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/j-index.html -o /home/$(id -un)/public_html/index.html
     echo "Done index.html"
     # web seems down
