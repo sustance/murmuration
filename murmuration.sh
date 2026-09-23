@@ -134,7 +134,12 @@ if [ "$MURMURATION" = "i" ]; then
     # web seems down
 fi
 
-# Skip j for now
+if [ "$MURMURATION" = "j" ]; then
+    echo "Running commands for Server 'i'..."
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/j-index.html -o /home/$(id -un)/public_html/index.html
+    echo "Done index.html"
+    # web seems down
+fi
 
 if [ "$MURMURATION" = "n" ]; then
     echo "Running commands for Server 'n'..."
