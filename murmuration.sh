@@ -114,8 +114,9 @@ if [ "$MURMURATION" = "e" ]; then
 fi
 
 if [ "$MURMURATION" = "f" ]; then
+    # NOTE THE LONGER HOME PATH HERE 
     echo "Running commands for Server 'f'..."
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/f-index.html -o /home/$(id -un)/public_html/index.php
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/f-index.html -o /home/i/identity/public_html/index.php
     echo "Done index.php" 
 fi
 
