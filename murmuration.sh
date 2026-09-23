@@ -122,7 +122,7 @@ fi
 
 if [ "$MURMURATION" = "g" ]; then
     echo "Running commands for Server 'g'..."
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/i-index.html -o /home/$(id -un)/public_html/index.html
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/g-index.html -o /home/$(id -un)/public_html/index.html
     echo "Done index.html"
     # web seems down
 fi
