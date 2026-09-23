@@ -109,14 +109,14 @@ fi
 
 if [ "$MURMURATION" = "e" ]; then
     echo "Running commands for Server 'e'..."
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/e-index.html -o /home/$(id -un)/public_html/index.html
-    echo "Done index.html"  
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/e-index.html -o /home/$(id -un)/public_html/index.php
+    echo "Done index.php"  
 fi
 
 if [ "$MURMURATION" = "f" ]; then
     echo "Running commands for Server 'f'..."
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/f-index.html -o /home/$(id -un)/public_html/index.html
-    echo "Done index.html" 
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/f-index.html -o /home/$(id -un)/public_html/index.php
+    echo "Done index.php" 
 fi
 
 if [ "$MURMURATION" = "g" ]; then
