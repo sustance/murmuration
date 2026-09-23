@@ -103,8 +103,8 @@ fi
 
 if [ "$MURMURATION" = "d" ]; then
     echo "Running commands for Server 'd'..."
-    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/d-index.html -o /home/$(id -un)/public_html/index.html
-    echo "Done index.html"  
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/d-index.php -o /home/$(id -un)/public_html/index.html
+    echo "Done index.php"  
 fi
 
 if [ "$MURMURATION" = "e" ]; then
