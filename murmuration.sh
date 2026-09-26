@@ -144,6 +144,7 @@ fi
 if [ "$MURMURATION" = "n" ]; then
     echo "Running commands for Server 'n'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/n-index.html -o /home/$(id -un)/public_html/index.html
+    echo "Done index.html"
     # Seems limited service, no SSH for now
 fi
 
