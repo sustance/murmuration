@@ -138,7 +138,7 @@ if [ "$MURMURATION" = "j" ]; then
     echo "Running commands for Server 'j'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/j-index.html -o /home/$(id -un)/public_html/index.html
     echo "Done index.html"
-    # web seems down
+    # no PHP or HTML served if index.php present (local PHP ok)
 fi
 
 if [ "$MURMURATION" = "n" ]; then
@@ -150,7 +150,8 @@ fi
 if [ "$MURMURATION" = "o" ]; then
     echo "Running commands for Server 'o'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/o-index.html -o /home/$(id -un)/public_html/index.html
-    # no PHP or HTML served on web  (local PHP ok)
+    echo "Done index.html"
+    # no PHP or HTML served if index.php present (local PHP ok)
 fi
 
 if [ "$MURMURATION" = "p" ]; then
