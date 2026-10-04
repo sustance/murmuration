@@ -1,9 +1,6 @@
 #!/usr/bin/env sh
 #!/bin/sh
-# murmururation.sh - Sourced from GitHub, MAKE IT EXECUTABLE
-# AI brief 
-# Define objective https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/README.md
-# Master configurator https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/murmuration.sh
+# murmururation.sh - Sourced from GitHub.
 
 # ==========================================
 # COMMON COMMANDS (Runs on ALL servers)
@@ -21,9 +18,7 @@ curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/hell
 echo "Done hello.php"
 
 # ==========================================
-# SERVER SPECIFIC COMMANDS
-# Objective is that each server or group of servers ha specialized roles.
-# any repetition here is temporary and will move to all or group  
+# SERVER SPECIFIC COMMANDS 
 # ==========================================
 
 homedir=$(eval echo ~"$(id -un)")
@@ -48,16 +43,9 @@ MURMURATION=$(cat "$id_file")
 echo "[$MURMURATION] Running machine specific commands..."
 
 # ==========================================
-# PHYSICAL ACCESS. NO INTERACTION
-# Longer term soverign replacemebt for github. meanwhile parellel function
-# these machines are typically repurposed hubs like wifi routers with attached ssd storage. 
-# They feature true 1G network and high resilience/recovery to power failure. 
-# Local/low latency to terminal machines
-# They lose their config on crash and need to seek or receive reconfiguration.
-#    They will duplicate github functions for soverignity purposes
-#    They will additionally be writable for bachup purposes
+# NODES
+# ==========================================
 
-# they lose their config on crash and need to seek or receive  new config from github on power on.
 if [ "$MURMURATION" = "3" ]; then
     echo "Running commands for Server '3'..."
     # (Asus_RT-AX3000/Asus_RT-AX3000.md) ASUSWRT-Merlin RT-AX58U_V2 3004.388.11_1-gnuton1 
@@ -66,11 +54,9 @@ if [ "$MURMURATION" = "3" ]; then
     # ASUSWRT-Merlin has specific need to recover config from special persistent folder on reboot  
 fi
 
-
 # ==========================================
-# THESE ARE TERMINALS and/or TASK OPTOMISED
+# TERMINALS
 # ==========================================
-# PHYSICAL ACCESS. KEYBOARD & SCREEN
 
 if [ "$MURMURATION" = "4" ]; then
     echo "Running commands for Server '4'..."
@@ -84,10 +70,8 @@ if [ "$MURMURATION" = "2" ]; then
 fi
 
 # ==========================================
-# THESE MACHINES ARE THE DOWNSTREAM SWARM
+# STARLINGS (The swarm)
 # ==========================================
-# NO ACCESS EXCEPT SSH WEB GOPHER
-
 
 if [ "$MURMURATION" = "b" ]; then
     echo "Running commands for Server 'b'..."
@@ -190,6 +174,5 @@ if [ "$MURMURATION" = "x" ]; then
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/x-index.html -o /home/$(id -un)/public_html/index.html
     # MOSTLY DOWN, ssh OK, No PHP, web. Lynx local only
 fi
-
 
 echo "[$(date)] Script completed."
