@@ -57,18 +57,22 @@ fi
 # ==========================================
 # TERMINALS
 # ==========================================
+#  Rsync
+# -a (archive): Preserves permissions, ownership, timestamps. modification time. copied, future syncs compare timestamps
+# -q (quiet): Suppresses non-error messages. don't get emails/spam from cron
+# -z (compress): Compresses file data during the transfer.small XML file, no a noticeable speed difference.
 
 if [ "$MURMURATION" = "4" ]; then
     echo "Running commands for Server '4'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/test.txt -o /home/$(id -un)/.local/bin/test.txt
-    rsync -aqz 4:~/cfg/menu.xml ~/.config/openbox/menu.xml
+    rsync -aqz 4:/home/aaa/cfg/menu.xml /home/aaa/.config/openbox/menu.xml
     # May be dedicated to GPU and Video tasks
 fi
 
 if [ "$MURMURATION" = "2" ]; then
     echo "Running commands for Server '2'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/test.txt -o /home/$(id -un)/.local/bin/test.txt
-    rsync -aqz 4:~/cfg/menu.xml ~/.config/openbox/menu.xml
+    rsync -aqz 4:/home/aaa/cfg/menu.xml /home/aaa/.config/openbox/menu.xml
 fi
 
 # ==========================================
