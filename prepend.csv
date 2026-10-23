@@ -1,0 +1,20 @@
+#^sep(Kyms Menu)  
+TEST,       TEST,    linux
+Google Chrome, google-chrome,          google-chrome
+Thunar File M, thunar,            thunar
+Xfce Terminal, xfce4-terminal,    xfce4-terminal
+Alacritty,     alacritty,         alacritty
+Battery >100%, ~/.local/bin/tlp-charge-full.sh, battery
+Handoff > FF,  ~/.local/bin/handoff.sh, 
+Discord,       discord,           discord
+Telegram,      /home/aaa/store/Applications/Telegram/Telegram, telegram
+Battery +Time, ~/.local/bin/mnu-qemu-battery+time.sh, clock
+ISO Freebsd,   ~/.local/bin/mnu-qemu-fbsd.sh, iso
+ISO WindowsPE, ~/.local/bin/mnu-qemu-winpe.sh 
+^sep()
+#^sep(Applications)
+@search,,3,3,150,20,2,left,top,auto,#000000 0,Type> Search
+
+
+#  x-terminal-emulator
+#kitty,         kitty,             kitty
