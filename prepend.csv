@@ -7,7 +7,8 @@ Battery >100%, ~/.local/bin/tlp-charge-full.sh,  battery-full-charging
 Handoff > FF,  ~/.local/bin/handoff.sh,          go-jump
 Discord,       discord,                          discord
 Telegram,      /home/aaa/store/Applications/Telegram/Telegram, telegram
-Battery +Time, ~/.local/bin/mnu-qemu-battery+time.sh, battery-full
+QOwnNotes,     ~/store/Applications/QOwnNotes-x86_64.AppImage, note
+Battery +Time, ~/.local/bin/mnu-qemu-battery+time.sh,          battery-full
 ISO Freebsd,   ~/.local/bin/mnu-qemu-fbsd.sh,    media-optical
 ISO WindowsPE, ~/.local/bin/mnu-qemu-winpe.sh,   media-optical-cdrom
 ^sep()
