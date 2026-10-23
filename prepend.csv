@@ -1,5 +1,4 @@
-#^sep(Kyms Menu)  
-TEST,       TEST,    linux
+^sep(Kyms Menu)  
 Google Chrome, google-chrome,          google-chrome
 Thunar File M, thunar,            thunar
 Xfce Terminal, xfce4-terminal,    xfce4-terminal
