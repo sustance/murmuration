@@ -14,6 +14,6 @@ ISO WindowsPE, ~/.local/bin/mnu-qemu-winpe.sh,   media-optical-cdrom
 ^sep()
 #^sep(Applications)
 @search,,3,3,150,20,2,left,top,auto,#000000 0,Type> Search
-
+Menu cli cmd, xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog.sh",utility-terminal
 #  x-terminal-emulator
 kitty,         kitty,             kitty
