@@ -1,4 +1,3 @@
-
 #!/bin/sh
 # note not bash syntax
 # Detect the Operating System once at startup
