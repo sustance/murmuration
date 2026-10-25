@@ -42,6 +42,10 @@ while true; do
 		BRIGHTNESS_50P)
 			brightnessctl set 50%
 			;;
+			
+		BRIGHTNESS_75P)
+			brightnessctl set 57%
+			;;
 
 		BRIGHTNESS_100P)
 			brightnessctl set 100%
