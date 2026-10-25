@@ -1,7 +1,7 @@
 ^sep(Kyms Menu)  
 Google Chrome, google-chrome,                    google-chrome
 Thunar File M, thunar,                           system-file-manager
-Xfce Terminal, xfce4-terminal,                   utilities-terminal
+Xfce Terminal, xfce4-terminal,                   x-terminal-emulator
 Alacritty,     alacritty,                        alacritty
 Battery >100%, ~/.local/bin/tlp-charge-full.sh,  battery-full-charging
 Handoff > FF,  ~/.local/bin/handoff.sh,          go-jump
@@ -14,6 +14,25 @@ ISO WindowsPE, ~/.local/bin/mnu-qemu-winpe.sh,   media-optical-cdrom
 ^sep()
 #^sep(Applications)
 @search,,3,3,150,20,2,left,top,auto,#000000 0,Type> Search
-Menu cli cmd, xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog.sh",utility-terminal
-#  x-terminal-emulator
-TUI MENU,       ~/.local/bin/mnu-dialog.sh,      arrow
+TUI MENU,      xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog.sh", application-x-executable
+
+
+#actions	UI buttons, operations, and menu items.	
+#document-open, document-save, edit-copy, edit-cut, edit-paste, view-refresh, zoom-in, go-next, mail-send, window-close
+
+#apps	Desktop launcher icons for core system utilities.	
+#utilities-terminal, system-file-manager, preferences-desktop, internet-web-browser, accessories-calculator, accessories-text-editor
+
+#devices	Hardware components and attached peripherals.	
+#drive-harddisk, drive-optical, audio-card, input-keyboard, input-mouse, printer, camera-photo, network-wired, computer
+
+#status	Real-time state indicators (often system tray).	
+#battery-charging, network-wireless-signal-excellent, dialog-error, dialog-information, dialog-warning, software-update-available
+
+#places	System directories, network locations, and trash.	
+#user-home, user-desktop, folder, folder-remote, network-server, user-trash (or user-trash-full)
+
+#mimetypes	Document and file type classifications.	
+#text-x-generic, image-x-generic, audio-x-generic, video-x-generic, application-x-executable, package-x-generic
+
+
