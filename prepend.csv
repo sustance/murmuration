@@ -9,8 +9,6 @@ Discord,       discord,                          discord
 Telegram,      /home/aaa/store/Applications/Telegram/Telegram, telegram
 QOwnNotes,     ~/store/Applications/QOwnNotes-x86_64.AppImage, note
 Battery +Time, ~/.local/bin/mnu-qemu-battery+time.sh,          battery-full
-ISO Freebsd,   ~/.local/bin/mnu-qemu-fbsd.sh,    media-optical
-ISO WindowsPE, ~/.local/bin/mnu-qemu-winpe.sh,   media-optical-cdrom
 ^sep()
 #^sep(Applications)
 @search,,3,3,150,20,2,left,top,auto,#000000 0,Type> Search
