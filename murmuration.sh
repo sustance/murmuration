@@ -7,19 +7,24 @@
 # ==========================================
 echo "[$(date)] Running common commands..."
 
+# Following to .local/bin/
+
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/starling.py -o /home/$(id -un)/.local/bin/starling.py
 /home/$(id -un)/.local/bin/starling.py
 echo "Done starling.py"
 
-curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mm -o /home/$(id -un)/.local/bin/mm
+curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mm           -o /home/$(id -un)/.local/bin/mm
 echo "Done mm"
+touch /home/$(id -un)/.config/jgmenu/mnu-dialog.sh
 
-curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/hello.php -o /home/$(id -un)/public_html/hello.php
+curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mnu-dialog.sh -o /home/$(id -un)/.local/bin/mnu-dialog.sh
+echo "Done mnu-dialog.sh"
+
+# Following to public_html
+
+curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/hello.php      -o /home/$(id -un)/public_html/hello.php
 echo "Done hello.php"
 
-touch /home/$(id -un)/.config/jgmenu/mnu-dialog.sh
-curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mnu-dialog.sh -o /home/$(id -un)/.config/jgmenu/mnu-dialog.sh
-echo "Done mnu-dialog.sh"
 
 # ==========================================
 # SERVER SPECIFIC COMMANDS 
