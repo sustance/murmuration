@@ -25,7 +25,6 @@ while true; do
     "CONSOLE_SETUP" "Reconfigure console settings" \
     "SNAPFORM_VIEWER" "European govt form system GUI" \
     "MULTI_KITTY_PUBNIX" "Open all the pubnix sites in TMUX" \
-    "CUSTOM"        "Enter a custom URL manually" \
     "REBOOT_TO_BIOS" "CAREFULL, reboots system" \
     3>&1 1>&2 2>&3)
 
@@ -134,19 +133,13 @@ while true; do
                     clear && bsdconfig console
                 fi
             fi
-            ;;
+            ;;  
         SNAPFORM_VIEWER)
             # Assuming snapform viewer binary or script placement:
             snapform-viewer 2>/dev/null || xfce4-terminal -e "snapform-viewer"
             ;;
         MULTI_KITTY_PUBNIX)
             kitty sh -c "/home/aaa/.local/bin/pubnix;exec bash"
-            ;;
-        CUSTOM)
-            URL=$(dialog --inputbox "Enter complete URL:" 8 60 "https://" 3>&1 1>&2 2>&3)
-            if [ -n "$URL" ]; then
-                ~/w3m-read.sh "$URL"
-            fi
             ;;
         REBOOT_TO_BIOS|SHEETS)
             xfce4-terminal --hold -e "sudo systemctl reboot --firmware-setup"
