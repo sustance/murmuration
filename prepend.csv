@@ -14,7 +14,8 @@ ISO WindowsPE, ~/.local/bin/mnu-qemu-winpe.sh,   media-optical-cdrom
 ^sep()
 #^sep(Applications)
 @search,,3,3,150,20,2,left,top,auto,#000000 0,Type> Search
-TUI MENU,      xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog.sh", application-x-executable
+TUI MNU strlg, xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog.sh", application-x-executable
+TUI MNU term,  xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog-term.sh", application-x-executable
 
 
 #actions	UI buttons, operations, and menu items.	
