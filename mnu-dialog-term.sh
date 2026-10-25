@@ -16,6 +16,7 @@ while true; do
     "NETWORK_TUI"   "Network configuration" \
     "CONSOLE_SETUP" "Reconfigure console settings" \
 	"SNAPFORM_VIEWER" "European govt form system GUI" \
+	"MULTI_KITTY_PUBNIX" "Open all the pubnix sites in TMUX \
     "CUSTOM"        "Enter a custom URL manually" \
     3>&1 1>&2 2>&3)
 
@@ -108,7 +109,9 @@ while true; do
 			"Snapform Viewer"
 		;;
 
-			
+		MULTI_KITTY_PUBNIX)
+			kitty sh -c "/home/aaa/.local/bin/pubnix;exec bash"
+			;;
 
         CUSTOM)
             URL=$(dialog --inputbox "Enter complete URL:" 8 60 "https://" 3>&1 1>&2 2>&3)
