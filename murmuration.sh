@@ -90,7 +90,6 @@ if [ "$MURMURATION" = "4" ]; then
     touch /home/$(id -un)/.config/jgmenu/mnu-dialog.sh
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mnu-dialog-term.sh -o /home/$(id -un)/.local/bin/mnu-dialog-term.sh
 echo "Done mnu-dialog-term.sh"
-    rsync -aqz 4:/home/aaa/cfg/menu.xml /home/aaa/.config/openbox/menu.xml
     # May be dedicated to GPU and Video tasks
 fi
 
@@ -101,7 +100,7 @@ if [ "$MURMURATION" = "2" ]; then
     touch /home/$(id -un)/.config/jgmenu/mnu-dialog.sh
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mnu-dialog-term.sh -o /home/$(id -un)/.local/bin/mnu-dialog-term.sh
 echo "Done mnu-dialog-term.sh"
-    rsync -aqz 4:/home/aaa/cfg/menu.xml /home/aaa/.config/openbox/menu.xml
+
 fi
 
 # ==========================================
