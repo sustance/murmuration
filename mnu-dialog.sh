@@ -7,7 +7,7 @@ while true; do
 
     CHOICE=$(dialog --title "MENU clo commands" --menu \
     "Select a script to run:" 20 65 10 \
-    "BRUTALIST" "The Brutalist Report 12h10x" \
+    "DNS_TEST" "Compare all DNS targets for performance" \
     "CUSTOM" "Enter a custom URL manually" \
     3>&1 1>&2 2>&3)
 
