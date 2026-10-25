@@ -126,72 +126,67 @@ fi
 if [ "$MURMURATION" = "g" ]; then
     echo "Running commands for Server 'g'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/g-index.html -o /home/$(id -un)/public_html/index.html
-    echo "Done index.html"
-    # web seems down
+    echo "Done index.html -- web seems down"
 fi
 
 if [ "$MURMURATION" = "i" ]; then
     echo "Running commands for Server 'i'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/i-index.html -o /home/$(id -un)/public_html/index.html
-    echo "Done index.html"
-    # web seems down
+    echo "Done index.html -- web seems down"
 fi
 
 if [ "$MURMURATION" = "j" ]; then
     echo "Running commands for Server 'j'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/j-index.html -o /home/$(id -un)/public_html/index.html
-    echo "Done index.html"
-    # no PHP or HTML served if index.php present (local PHP ok)
+    echo "Done index.html no PHP or HTML served if index.php present (local PHP ok)"
 fi
 
 if [ "$MURMURATION" = "n" ]; then
     echo "Running commands for Server 'n'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/n-index.html -o /home/$(id -un)/public_html/index.html
-    echo "Done index.html"
-    # Seems limited service, no SSH for now
+    echo "Done index.html -- Seems limited service, no SSH for now"
 fi
 
 if [ "$MURMURATION" = "o" ]; then
     echo "Running commands for Server 'o'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/o-index.html -o /home/$(id -un)/public_html/index.html
-    echo "Done index.html"
-    # no PHP or HTML served if index.php present (local PHP ok)
+    echo "Done index.html -- no PHP or HTML served if index.php present (local PHP ok)"
 fi
 
 if [ "$MURMURATION" = "p" ]; then
     echo "Running commands for Server 'p'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/p-index.html -o /home/$(id -un)/public_html/index.html
-    # NO PHP SERVICE (local PHP ok)
+    echo "Done index.html -- NO PHP SERVICE (local PHP ok)"
 fi
 
 if [ "$MURMURATION" = "r" ]; then
     echo "Running commands for Server 'r'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/r-index.html -o /home/$(id -un)/public_html/index.html
-    # WORKING PHP SERVICE, CURRENT AND DEFAULT PAGE IS HTML
+    echo "Done index.html -- WORKING PHP SERVICE, CURRENT AND DEFAULT PAGE IS HTML"
 fi
 
 if [ "$MURMURATION" = "t" ]; then
     echo "Running secondary commands for Server 't'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/t-index.html -o /home/$(id -un)/public_html/index.html
-   # WORKING PHP SERVICE, BUT SSH CURRENTLY DOWN SO CANT CONFIGURE
+    echo "Done index.html -- WORKING PHP SERVICE, BUT SSH CURRENTLY DOWN SO CANT CONFIGURE"
 fi
 
 if [ "$MURMURATION" = "u" ]; then
     echo "Running secondary commands for Server 'u'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/u-index.html -o /home/$(id -un)/public_html/index.html
-    # NO PHP SERVICE
+    echo "Done index.html -- NO PHP SERVICE"
 fi
 
 if [ "$MURMURATION" = "v" ]; then
     echo "Running secondary commands for Server 'v'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/v-index.html -o /home/$(id -un)/public_html/index.html
-    # server completely down (common problem)
+    echo "Done index.html -- server completely down (common problem)"
 fi
 
 if [ "$MURMURATION" = "x" ]; then
     echo "Running commands for Server 'X'..."
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/x-index.html -o /home/$(id -un)/public_html/index.html
-    # MOSTLY DOWN, ssh OK, No PHP, web. Lynx local only
+    echo "Done index.html -- MOSTLY DOWN, ssh OK, No PHP, web. Lynx local only"
 fi
 
 echo "[$(date)] Script completed."
