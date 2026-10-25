@@ -7,6 +7,8 @@ while true; do
 
     CHOICE=$(dialog --title "MENU cli commands" --menu \
     "Select a script to run:" 20 65 10 \
+	"SHEETS_CSV"    "Lict cli csv spreadsheet" \
+	"
     "POWER_CHG_100" "Enable battery to charge to 100%" \
     "POWER_RESET"   "Restore battery to charge to defaults" \
     "POWER_AUDIT"   "mnu-power-audit.sh realtime details" \
@@ -32,6 +34,19 @@ while true; do
 
 		SHEETS_CSV)
 			xfce4-terminal --hold -e "bash -c '/home/aaa/store/Applications/sheets_Linux_x86_64/sheets /home/aaa/md/MATURITY.csv'"
+
+		BRIGHTNESS_25P)
+			brightnessctl set 25%
+			;;
+
+		BRIGHTNESS_50P)
+			brightnessctl set 50%
+			;;
+
+		BRIGHTNESS_100P)
+			brightnessctl set 100%
+			;;
+
 
 		POWER_CHG_100)
     		xfce4-terminal -e "/home/aaa/.local/bin/mnu-tlp-charge-full.sh"
