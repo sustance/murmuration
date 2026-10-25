@@ -2,6 +2,8 @@
 #!/bin/sh
 # murmururation.sh - Sourced from GitHub.
 
+#NOTE... go thru and remov the touch commands for tidytness
+
 # ==========================================
 # COMMON COMMANDS (Runs on ALL servers)
 # ==========================================
@@ -75,6 +77,9 @@ if [ "$MURMURATION" = "9" ]; then
     echo "Running commands for Server '9' the FreeBSD Dell Laptop (de-bsd)"
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/append.csv    -o /home/$(id -un)/.config/jgmenu/append.csv 
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/prepend.csv   -o /home/$(id -un)/.config/jgmenu/prepend.csv 
+    touch /home/$(id -un)/.config/jgmenu/mnu-dialog.sh
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mnu-dialog-term.sh -o /home/$(id -un)/.local/bin/mnu-dialog-term.sh
+echo "Done mnu-dialog-term.sh"
     # Experimental and learning
 fi
 
@@ -82,6 +87,9 @@ if [ "$MURMURATION" = "4" ]; then
     echo "Running commands for Server '4' The Debian Lenovo Laptop (li)"
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/append.csv    -o /home/$(id -un)/.config/jgmenu/append.csv 
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/prepend.csv   -o /home/$(id -un)/.config/jgmenu/prepend.csv 
+    touch /home/$(id -un)/.config/jgmenu/mnu-dialog.sh
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mnu-dialog-term.sh -o /home/$(id -un)/.local/bin/mnu-dialog-term.sh
+echo "Done mnu-dialog-term.sh"
     rsync -aqz 4:/home/aaa/cfg/menu.xml /home/aaa/.config/openbox/menu.xml
     # May be dedicated to GPU and Video tasks
 fi
@@ -90,6 +98,9 @@ if [ "$MURMURATION" = "2" ]; then
     echo "Running commands for Server '2' The Debian Huawei Laptop (hu)"
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/append.csv    -o /home/$(id -un)/.config/jgmenu/append.csv 
     curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/prepend.csv   -o /home/$(id -un)/.config/jgmenu/prepend.csv 
+    touch /home/$(id -un)/.config/jgmenu/mnu-dialog.sh
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mnu-dialog-term.sh -o /home/$(id -un)/.local/bin/mnu-dialog-term.sh
+echo "Done mnu-dialog-term.sh"
     rsync -aqz 4:/home/aaa/cfg/menu.xml /home/aaa/.config/openbox/menu.xml
 fi
 
