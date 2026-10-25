@@ -103,6 +103,12 @@ while true; do
                 fi
             fi
             ;;
+        BLUETOOTHCTL)
+            xfce4-terminal -e bluetoothctl
+            ;;
+        BLUEMAN_MGR)
+            blueman-manager
+            ;;
         NETWORK_TUI)
             if [ "$OS_TYPE" = "Linux" ]; then
                 if [ -n "$DISPLAY" ]; then
