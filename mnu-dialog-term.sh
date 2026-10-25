@@ -7,11 +7,13 @@ while true; do
 
     CHOICE=$(dialog --title "MENU cli commands" --menu \
     "Select a script to run:" 20 65 10 \
-    "SHEETS_CSV"    "Lict cli csv spreadsheet" \
-    "BRIGHTNESS_25P" "A" \
-    "BRIGHTNESS_50P" "A" \
-    "BRIGHTNESS_75P" "A" \
-    "BRIGHTNESS_100P" "A" \
+    "SHEETS_CSV"    "List cli csv spreadsheet" \
+    "W3M_COOKIE"    "Open W3M with Menu" \
+    "NEOMUTT"       "Open Gmail \
+    "OPEN_BB"       "Open Bloomberg" \
+    "GLOOMBERB"      "Gloomberb" \
+    "W3M_COOKIE"    "Open at the menu" \
+    "NEOMUTT"       "Open email" \
     "BRIGHTNESS_SLIDER" "A" \
     "POWER_CHG_100" "Enable battery to charge to 100%" \
     "POWER_RESET"   "Restore battery to charge to defaults" \
@@ -37,6 +39,27 @@ while true; do
         SHEETS_CSV)
             xfce4-terminal --hold -e "bash -c '/home/aaa/store/Applications/sheets_Linux_x86_64/sheets /home/aaa/md/MATURITY.csv'"
             ;;
+
+        OPEN_BB)
+             xfce4-terminal --hold -e "bash -c 'source /home/aaa/openbb-env/bin/activate; openbb'"
+             ;;
+             
+        GLOOMBERB)
+            kitty --hold -e ".local/bin/gloomberb"
+            ;;
+
+        W3M_COOKIE)
+            xfce4-terminal --hold -e "/usr/bin/w3m -s -cookie -N"
+            ;;
+        
+         NEOMUTT)
+            xfce4-terminal --hold -e "neomutt"
+            ;;
+
+         PARALLEL_PING)
+            xfce4-terminal --hold -e "/usr/bin/php /home/aaa/public_html/simple_parallel_ping.php"
+            ;;
+         
         BRIGHTNESS_25P)
             brightnessctl set 25%
             ;;
