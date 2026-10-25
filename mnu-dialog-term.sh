@@ -20,7 +20,10 @@ while true; do
     "QEMU_FREEBSD"  "mnu-qemu-fbsd.sh iso freebsd" \
     "QEMU_WIN_PE"   "mnu-qemu-winpe.sh iso windows PE" \
     "AUDIO_MIXER"   "Open system audio mixer" \
+    "BLUETOOTHCTL"  "A" \
+    "BLUEMAN_MGR"   "A" \
     "NETWORK_TUI"   "Network configuration" \
+    "XFCE4_SETTING"  "xfce4-settings-manager" \
     "CONSOLE_SETUP" "Reconfigure console settings" \
     "SNAPFORM_VIEWER" "European govt form system GUI" \
     "MULTI_KITTY_PUBNIX" "Open all the pubnix sites in TMUX" \
@@ -124,6 +127,9 @@ while true; do
                 fi
             fi
             ;;
+        XFCE4_SETTING)
+            xfce4-settings-manager
+        ;;  
         CONSOLE_SETUP)
             if [ "$OS_TYPE" = "Linux" ]; then
                 if [ -n "$DISPLAY" ]; then
