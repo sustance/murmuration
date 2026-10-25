@@ -18,6 +18,7 @@ while true; do
 	"SNAPFORM_VIEWER" "European govt form system GUI" \
 	"MULTI_KITTY_PUBNIX" "Open all the pubnix sites in TMUX \
     "CUSTOM"        "Enter a custom URL manually" \
+	"REBOOT_TO_BIOS" "CAREFULL, remmots system"
     3>&1 1>&2 2>&3)
 
     # POSIX shell uses single '=' for checking the exit status safely
@@ -28,6 +29,9 @@ while true; do
     
 
     case "$CHOICE" in
+
+		SHEETS_CSV)
+			xfce4-terminal --hold -e "bash -c '/home/aaa/store/Applications/sheets_Linux_x86_64/sheets /home/aaa/md/MATURITY.csv'"
 
 		POWER_CHG_100)
     		xfce4-terminal -e "/home/aaa/.local/bin/mnu-tlp-charge-full.sh"
@@ -119,6 +123,14 @@ while true; do
                 ~/w3m-read.sh "$URL"
             fi
             ;;
+
+		REBOOT_TO_BIOS
+			xfce4-terminal --hold -e "sudo systemctl reboot --firmware-setup"
+			;;
+
+		SHEETS
+			xfce4-terminal --hold -e "sudo systemctl reboot --firmware-setup"
+			;;			
 
         *)
             exit 0
