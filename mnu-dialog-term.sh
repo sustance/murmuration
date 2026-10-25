@@ -5,13 +5,17 @@ OS_TYPE=$(uname)
 
 while true; do
 
-    CHOICE=$(dialog --title "MENU clo commands" --menu \
+    CHOICE=$(dialog --title "MENU cli commands" --menu \
     "Select a script to run:" 20 65 10 \
-    "BRUTALIST" "The Brutalist Report 12h10x" \
-    "AUDIO_MIXER" "Open system audio mixer" \
-    "NETWORK_TUI" "Network configuration" \
+    "POWER_CHG_100" "Enable battery to charge to 100%" \
+    "POWER_RESET"   "Restore battery to charge to defaults" \
+    "POWER_AUDIT"   "mnu-power-audit.sh realtime details" \
+    "QEMU_FREEBSD"  "mnu-qemu-fbsd.sh iso freebsd" \
+    "QEMU_WIN_PE"   "mnu-qemu-winpe.sh iso windows PE" \
+    "AUDIO_MIXER"   "Open system audio mixer" \
+    "NETWORK_TUI"   "Network configuration" \
     "CONSOLE_SETUP" "Reconfigure console settings" \
-    "CUSTOM" "Enter a custom URL manually" \
+    "CUSTOM"        "Enter a custom URL manually" \
     3>&1 1>&2 2>&3)
 
     # POSIX shell uses single '=' for checking the exit status safely
@@ -19,12 +23,38 @@ while true; do
         echo "Navigation cancelled."
         exit 0
     fi
+    
 
     case "$CHOICE" in
-        BRUTALIST)
-            ~/w3m-read.sh "https://envs.net"
-            ;;
 
+		POWER_CHG_100)
+    		xfce4-terminal -e "/home/aaa/.local/bin/mnu-tlp-charge-full.sh"
+    		;;
+
+    	POWER_RESET)
+    	   	xfce4-terminal -e "/home/aaa/.local/bin/mnu-tlp-restore.sh"
+    		;;
+    
+		POWER_AUDIT)
+			xfce4-terminal -e "/home/aaa/.local/bin/mnu-power-audit.sh"
+			;;
+    
+        QEMU_FREEBSD)
+            ~/.local/bin/mnu-qemu-fbsd.sh
+            ;;
+            
+        POWER_AUDIT)
+            ~/.local/bin/mnu-qemu-winpe.sh
+            ;;
+            
+#        QEMU_S_RESCUE)
+#            ~/.local/bin/mnu-qemu-srescue.sh
+#            ;;
+            
+        QEMU_WIN_PE)
+            ~/.local/bin/mnu-qemu-winpe.sh
+            ;;
+            
         AUDIO_MIXER)
             if [ "$OS_TYPE" = "Linux" ]; then
                 if [ -n "$DISPLAY" ]; then
