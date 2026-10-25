@@ -8,7 +8,11 @@ while true; do
     CHOICE=$(dialog --title "MENU cli commands" --menu \
     "Select a script to run:" 20 65 10 \
 	"SHEETS_CSV"    "Lict cli csv spreadsheet" \
-	"
+	"BRIGHTNESS_25P" ""  \
+	"BRIGHTNESS_50P" "" \
+	"BRIGHTNESS_75P" "" \
+	"BRIGHTNESS_100P" "" \
+	"BRIGHTNESS_SLIDER" "" \
     "POWER_CHG_100" "Enable battery to charge to 100%" \
     "POWER_RESET"   "Restore battery to charge to defaults" \
     "POWER_AUDIT"   "mnu-power-audit.sh realtime details" \
@@ -51,9 +55,14 @@ while true; do
 			brightnessctl set 100%
 			;;
 
-
+		BRIGHTNESS_SLIDER)
+			brightnessctl set 100%
+			;;
+			
 		POWER_CHG_100)
     		xfce4-terminal -e "/home/aaa/.local/bin/mnu-tlp-charge-full.sh"
+			sh -c "brightnessctl set $(yad --scale --value=$(brightnessctl g) --max-value=100 --title='Brightness' --width=300 --height=100 2>/dev/null)%"
+
     		;;
 
     	POWER_RESET)
