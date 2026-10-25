@@ -8,6 +8,7 @@ Handoff > FF,  ~/.local/bin/handoff.sh,          go-jump
 Discord,       discord,                          discord
 Telegram,      /home/aaa/store/Applications/Telegram/Telegram, telegram
 QOwnNotes,     ~/store/Applications/QOwnNotes-x86_64.AppImage, note
+Wifi Connect,  nm-connection-editor,             wifi
 Battery +Time, ~/.local/bin/mnu-qemu-battery+time.sh,          battery-full
 ^sep()
 #^sep(Applications)
@@ -20,7 +21,8 @@ TUI MNU term,  xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog-term.sh", appl
 #document-open, document-save, edit-copy, edit-cut, edit-paste, view-refresh, zoom-in, go-next, mail-send, window-close
 
 #apps	Desktop launcher icons for core system utilities.	
-#utilities-terminal, system-file-manager, preferences-desktop, internet-web-browser, accessories-calculator, accessories-text-editor
+#utilities-terminal, system-file-manager, preferences-desktop, internet-web-browser, 
+#accessories-calculator, accessories-text-editor
 
 #devices	Hardware components and attached peripherals.	
 #drive-harddisk, drive-optical, audio-card, input-keyboard, input-mouse, printer, camera-photo, network-wired, computer
