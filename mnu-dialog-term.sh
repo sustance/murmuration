@@ -38,6 +38,7 @@ while true; do
 
 		SHEETS_CSV)
 			xfce4-terminal --hold -e "bash -c '/home/aaa/store/Applications/sheets_Linux_x86_64/sheets /home/aaa/md/MATURITY.csv'"
+			;;
 
 		BRIGHTNESS_25P)
 			brightnessctl set 25%
@@ -56,13 +57,12 @@ while true; do
 			;;
 
 		BRIGHTNESS_SLIDER)
-			brightnessctl set 100%
+			sh -c "brightnessctl set $(yad --scale --value=$(brightnessctl g) --max-value=100 --title='Brightness' --width=300 --height=100 2>/dev/null)%"
+
 			;;
 			
 		POWER_CHG_100)
     		xfce4-terminal -e "/home/aaa/.local/bin/mnu-tlp-charge-full.sh"
-			sh -c "brightnessctl set $(yad --scale --value=$(brightnessctl g) --max-value=100 --title='Brightness' --width=300 --height=100 2>/dev/null)%"
-
     		;;
 
     	POWER_RESET)
