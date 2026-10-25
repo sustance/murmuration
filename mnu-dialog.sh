@@ -18,8 +18,8 @@ while true; do
     fi
 
     case "$CHOICE" in
-        BRUTALIST)
-            ~/w3m-read.sh "https://envs.net"
+        DNS_TEST)
+            xfce4-terminal -e "/home/aaa/.local/bin/dnsperftest/dnstest.sh | sort -k 22 -n"
             ;;
 
 
