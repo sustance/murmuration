@@ -8,11 +8,11 @@ while true; do
     CHOICE=$(dialog --title "MENU cli commands" --menu \
     "Select a script to run:" 20 65 10 \
 	"SHEETS_CSV"    "Lict cli csv spreadsheet" \
-	"BRIGHTNESS_25P" ""  \
-	"BRIGHTNESS_50P" "" \
-	"BRIGHTNESS_75P" "" \
-	"BRIGHTNESS_100P" "" \
-	"BRIGHTNESS_SLIDER" "" \
+	"BRIGHTNESS_25P" "A" \
+	"BRIGHTNESS_50P" "A" \
+	"BRIGHTNESS_75P" "A" \
+	"BRIGHTNESS_100P" "A" \
+	"BRIGHTNESS_SLIDER" "A" \
     "POWER_CHG_100" "Enable battery to charge to 100%" \
     "POWER_RESET"   "Restore battery to charge to defaults" \
     "POWER_AUDIT"   "mnu-power-audit.sh realtime details" \
@@ -24,7 +24,7 @@ while true; do
 	"SNAPFORM_VIEWER" "European govt form system GUI" \
 	"MULTI_KITTY_PUBNIX" "Open all the pubnix sites in TMUX" \
     "CUSTOM"        "Enter a custom URL manually" \
-	"REBOOT_TO_BIOS" "CAREFULL, remmots system" \
+	"REBOOT_TO_BIOS" "CAREFULL, reboots system" \
     3>&1 1>&2 2>&3)
 
     # POSIX shell uses single '=' for checking the exit status safely
@@ -77,9 +77,6 @@ while true; do
             ~/.local/bin/mnu-qemu-fbsd.sh
             ;;
             
-        POWER_AUDIT)
-            ~/.local/bin/mnu-qemu-winpe.sh
-            ;;
             
 #        QEMU_S_RESCUE)
 #            ~/.local/bin/mnu-qemu-srescue.sh
@@ -152,7 +149,7 @@ while true; do
             fi
             ;;
 
-		REBOOT_TO_BIOS
+		REBOOT_TO_BIOS)
 			xfce4-terminal --hold -e "sudo systemctl reboot --firmware-setup"
 			;;
 
