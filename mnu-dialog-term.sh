@@ -22,9 +22,9 @@ while true; do
     "NETWORK_TUI"   "Network configuration" \
     "CONSOLE_SETUP" "Reconfigure console settings" \
 	"SNAPFORM_VIEWER" "European govt form system GUI" \
-	"MULTI_KITTY_PUBNIX" "Open all the pubnix sites in TMUX \
+	"MULTI_KITTY_PUBNIX" "Open all the pubnix sites in TMUX" \
     "CUSTOM"        "Enter a custom URL manually" \
-	"REBOOT_TO_BIOS" "CAREFULL, remmots system"
+	"REBOOT_TO_BIOS" "CAREFULL, remmots system" \
     3>&1 1>&2 2>&3)
 
     # POSIX shell uses single '=' for checking the exit status safely
