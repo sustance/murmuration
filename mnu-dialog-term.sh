@@ -8,8 +8,7 @@ while true; do
     CHOICE=$(dialog --title "MENU cli commands" --menu \
     "Select a script to run:" 20 65 10 \
     "SHEETS_CSV"    "List cli csv spreadsheet" \
-    "W3M_COOKIE"    "Open W3M with Menu" \
-    "NEOMUTT"       "Open Gmail \
+    "NEOMUTT"       "Open Gmail" \
     "OPEN_BB"       "Open Bloomberg" \
     "GLOOMBERB"      "Gloomberb" \
     "W3M_COOKIE"    "Open at the menu" \
