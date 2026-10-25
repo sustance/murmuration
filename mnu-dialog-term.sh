@@ -15,6 +15,7 @@ while true; do
     "AUDIO_MIXER"   "Open system audio mixer" \
     "NETWORK_TUI"   "Network configuration" \
     "CONSOLE_SETUP" "Reconfigure console settings" \
+	"SNAPFORM_VIEWER" "European govt form system GUI" \
     "CUSTOM"        "Enter a custom URL manually" \
     3>&1 1>&2 2>&3)
 
@@ -102,6 +103,12 @@ while true; do
                 fi
             fi
             ;;
+
+		SNAPFORM_VIEWER)
+			"Snapform Viewer"
+		;;
+
+			
 
         CUSTOM)
             URL=$(dialog --inputbox "Enter complete URL:" 8 60 "https://" 3>&1 1>&2 2>&3)
