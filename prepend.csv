@@ -15,7 +15,8 @@ Battery +Time, ~/.local/bin/mnu-qemu-battery+time.sh,                        bat
 @search,,3,3,150,20,2,left,top,auto,#000000 0,Type> Search
 TUI MNU strlg, xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog.sh",       application-x-executable
 TUI MNU term,  xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog-term.sh",  application-x-executable
-W3M,           w3m -o ssl_verify_server=0 https://68k.news,                  terminal
+W3M,           xfce4-terminal; -e "w3m",                  terminal
+W3M+,          xfce4-terminal; -e "w3m -o ssl_verify_server=0 https://68k.news", utilities-terminal
 
 
 #actions	UI buttons, operations, and menu items.	
