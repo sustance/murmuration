@@ -1,20 +1,21 @@
 ^sep(Kyms Menu)  
-Google Chrome, google-chrome,                    google-chrome
-Thunar File M, thunar,                           system-file-manager
-Xfce Terminal, xfce4-terminal,                   x-terminal-emulator
-Alacritty,     alacritty,                        alacritty
-Battery >100%, ~/.local/bin/tlp-charge-full.sh,  battery-full-charging
-Handoff > FF,  ~/.local/bin/handoff.sh,          go-jump
-Discord,       discord,                          discord
-Telegram,      /home/aaa/store/Applications/Telegram/Telegram, telegram
-QOwnNotes,     ~/store/Applications/QOwnNotes-x86_64.AppImage, note
-Wifi Connect,  nm-connection-editor,             wifi
-Battery +Time, ~/.local/bin/mnu-qemu-battery+time.sh,          battery-full
+Google Chrome, google-chrome,                                                google-chrome
+Thunar File M, thunar,                                                       system-file-manager
+Xfce Terminal, xfce4-terminal,                                               x-terminal-emulator
+Alacritty,     alacritty,                                                    alacritty
+Battery >100%, ~/.local/bin/tlp-charge-full.sh,                              battery-full-charging
+Handoff > FF,  ~/.local/bin/handoff.sh,                                      go-jump
+Discord,       discord,                                                      discord
+Telegram,      /home/aaa/store/Applications/Telegram/Telegram,               telegram
+QOwnNotes,     ~/store/Applications/QOwnNotes-x86_64.AppImage,               note
+Wifi Connect,  nm-connection-editor,                                         wifi
+Battery +Time, ~/.local/bin/mnu-qemu-battery+time.sh,                        battery-full
 ^sep()
 #^sep(Applications)
 @search,,3,3,150,20,2,left,top,auto,#000000 0,Type> Search
-TUI MNU strlg, xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog.sh", application-x-executable
-TUI MNU term,  xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog-term.sh", application-x-executable
+TUI MNU strlg, xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog.sh",       application-x-executable
+TUI MNU term,  xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog-term.sh",  application-x-executable
+W3M,           w3m -o ssl_verify_server=0 https://68k.news,                  terminal
 
 
 #actions	UI buttons, operations, and menu items.	
