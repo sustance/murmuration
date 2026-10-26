@@ -1,22 +1,22 @@
 ^sep(Kyms Menu)  
-Google Chrome, google-chrome,                                                google-chrome
+Google Chrome, google-chrome,                                                internet-web-browser
 Thunar File M, thunar,                                                       system-file-manager
-Xfce Terminal, xfce4-terminal,                                               x-terminal-emulator
-Alacritty,     alacritty,                                                    alacritty
+Xfce Terminal, xfce4-terminal,                                               utilities-terminal
+Alacritty,     alacritty,                                                    utilities-terminal
 Battery >100%, ~/.local/bin/tlp-charge-full.sh,                              battery-full-charging
 Handoff > FF,  ~/.local/bin/handoff.sh,                                      go-jump
 Discord,       discord,                                                      discord
 Telegram,      /home/aaa/store/Applications/Telegram/Telegram,               telegram
-QOwnNotes,     ~/store/Applications/QOwnNotes-x86_64.AppImage,               note
-Wifi Connect,  nm-connection-editor,                                         wifi
+QOwnNotes,     ~/store/Applications/QOwnNotes-x86_64.AppImage,               accessories-text-editor
+Wifi Connect,  nm-connection-editor,                                         network-wired
 Battery +Time, ~/.local/bin/mnu-qemu-battery+time.sh,                        battery-full
 ^sep()
 #^sep(Applications)
 @search,,3,3,150,20,2,left,top,auto,#000000 0,Type> Search
-TUI MNU strlg, xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog.sh",       application-x-executable
-TUI MNU term,  xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog-term.sh",  application-x-executable
-W3M,           xfce4-terminal; -e "w3m",                  terminal
-W3M+,          xfce4-terminal; -e "w3m -o ssl_verify_server=0 https://68k.news", utilities-terminal
+TUI MNU strlg, xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog.sh",           utilities-terminal
+TUI MNU term,  xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog-term.sh",      utilities-terminal
+W3M,           xfce4-terminal; -e "w3m",                                         internet-web-browser
+W3M+,          xfce4-terminal; -e "w3m -o ssl_verify_server=0 https://68k.news", internet-web-browser
 
 
 #actions	UI buttons, operations, and menu items.	
