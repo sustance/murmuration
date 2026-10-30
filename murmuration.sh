@@ -103,6 +103,14 @@ echo "Done mnu-dialog-term.sh"
 
 fi
 
+if [ "$MURMURATION" = "x" ]; then
+    echo "Running commands for Server 'x' "
+    touch /root/jgmenu/mnu-dialog-term.sh
+    curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/ImportNOTES.md -o /root/ImportNOTES.md
+echo "Done mnu-dialog-term.sh"
+
+fi
+
 # ==========================================
 # STARLINGS (The swarm)
 # ==========================================
