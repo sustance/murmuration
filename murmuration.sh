@@ -22,6 +22,9 @@ touch /home/$(id -un)/.config/jgmenu/mnu-dialog.sh
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/mnu-dialog.sh -o /home/$(id -un)/.local/bin/mnu-dialog.sh
 echo "Done mnu-dialog.sh"
 
+curl https://sustance.github.io/bookmark.html -o /home/$(id -un)/.w3m/bookmark.html
+echo "Done bookmark.html"
+
 # Following to public_html
 
 curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/hello.php      -o /home/$(id -un)/public_html/hello.php
