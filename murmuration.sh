@@ -31,6 +31,10 @@ curl https://raw.githubusercontent.com/sustance/murmuration/refs/heads/main/hell
 echo "Done hello.php"
 
 
+curl https://raw.githubusercontent.com/sustance/configs/refs/heads/main/php/status_slaves.py -o /home/$(id -un)/public_html/status_slaves.py
+python3 /home/$(id -un)/public_html/status_slaves.py
+
+
 # ==========================================
 # SERVER SPECIFIC COMMANDS 
 # ==========================================
