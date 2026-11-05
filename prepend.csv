@@ -3,7 +3,6 @@ Google Chrome, google-chrome,                                                int
 Thunar File M, thunar,                                                       system-file-manager
 Xfce Terminal, xfce4-terminal,                                               utilities-terminal
 Alacritty,     alacritty,                                                    utilities-terminal
-Battery >100%, ~/.local/bin/tlp-charge-full.sh,                              battery-full-charging
 Handoff > FF,  ~/.local/bin/handoff.sh,                                      go-jump
 Discord,       discord,                                                      discord
 Telegram,      /home/aaa/store/Applications/Telegram/Telegram,               telegram
