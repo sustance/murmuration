@@ -12,8 +12,8 @@ Battery +Time, ~/.local/bin/mnu-qemu-battery+time.sh,                        bat
 ^sep()
 #^sep(Applications)
 @search,,3,3,150,20,2,left,top,auto,#000000 0,Type> Search
-TUI MNU strlg, xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog.sh",           utilities-terminal
-TUI MNU term,  xfce4-terminal -e "/home/aaa/.local/bin/mnu-dialog-term.sh",      utilities-terminal
+TUI MNU strlg, xfce4-terminal --geometry 48x48 -e "/home/aaa/.local/bin/mnu-dialog.sh",           utilities-terminal
+TUI MNU term,  xfce4-terminal --geometry 48x120 -e "/home/aaa/.local/bin/mnu-dialog-term.sh",      utilities-terminal
 W3M,           xfce4-terminal; -e "w3m",                                         internet-web-browser
 W3M+,          xfce4-terminal; -e "w3m -o ssl_verify_server=0 https://68k.news", internet-web-browser
 
