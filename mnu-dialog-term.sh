@@ -7,27 +7,27 @@ while true; do
 
     CHOICE=$(dialog --title "MENU cli commands" --menu \
     "Select a script to run:" 20 65 10 \
-    "SHEETS_CSV"    "List cli csv spreadsheet" \
-    "NEOMUTT"       "Open Gmail" \
-    "OPEN_BB"       "Open Bloomberg" \
-    "GLOOMBERB"      "Gloomberb" \
-    "W3M_COOKIE"    "Open at the menu" \
-    "NEOMUTT"       "Open email" \
-    "BRIGHTNESS_SLIDER" "A" \
-    "POWER_CHG_100" "Enable battery to charge to 100%" \
-    "POWER_RESET"   "Restore battery to charge to defaults" \
-    "POWER_AUDIT"   "mnu-power-audit.sh realtime details" \
-    "QEMU_FREEBSD"  "mnu-qemu-fbsd.sh iso freebsd" \
-    "QEMU_WIN_PE"   "mnu-qemu-winpe.sh iso windows PE" \
-    "AUDIO_MIXER"   "Open system audio mixer" \
-    "BLUETOOTHCTL"  "A" \
-    "BLUEMAN_MGR"   "A" \
-    "NETWORK_TUI"   "Network configuration" \
-    "XFCE4_SETTING"  "xfce4-settings-manager" \
-    "CONSOLE_SETUP" "Reconfigure console settings" \
-    "SNAPFORM_VIEWER" "European govt form system GUI" \
-    "MULTI_KITTY_PUBNIX" "Open all the pubnix sites in TMUX" \
-    "REBOOT_TO_BIOS" "CAREFULL, reboots system" \
+    "SHEETS_CSV"      "Cli spreadsheet" \
+    "NEOMUTT"         "Open Gmail" \
+    "OPEN_BB"         "Open Bloomberg" \
+    "GLOOMBERB"       "Gloomberb" \
+    "W3M_COOKIE"      "With  cookies" \
+    "NEOMUTT"         "Open email" \
+    "BRIGHT_SLIDER"   "Brightness" \
+    "POWER_CHG_100"   "Batt charge 100%" \
+    "POWER_RESET"     "Batt chg default" \
+    "POWER_AUDIT"     "Power realtime" \
+    "QEMU_FREEBSD"    "ISO freebsd" \
+    "QEMU_WIN_PE"     "ISO iso winPE" \
+    "AUDIO_MIXER"     "Open  alsamixer" \
+    "BLUETOOTHCTL"    "BT Control" \
+    "BLUEMAN_MGR"     "BT Manager" \
+    "NETWORK_TUI"     "Network config." \
+    "XFCE4_SETTING"   "Settings-manager" \
+    "CONSOLE_SETUP"   "Reconfig console" \
+    "SNAPFORM_VIEW"   "EU govt form GUI" \
+    "M_KITTY_PUBNIX"  "Tmux all pubnix " \
+    "REBOOT_TO_BIOS"  "Reboots to BIOS" \
     3>&1 1>&2 2>&3)
 
     # POSIX shell uses single '=' for checking the exit status safely
@@ -73,7 +73,7 @@ while true; do
         BRIGHTNESS_100P)
             brightnessctl set 100%
             ;;
-        BRIGHTNESS_SLIDER)
+        BRIGHT_SLIDER)
             sh -c "brightnessctl set \$(yad --scale --value=\$(brightnessctl g) --max-value=100 --title='Brightness' --width=300 --height=100 2>/dev/null)%"
             ;;
         POWER_CHG_100)
@@ -145,11 +145,11 @@ while true; do
                 fi
             fi
             ;;  
-        SNAPFORM_VIEWER)
+        SNAPFORM_VIEW)
             # Assuming snapform viewer binary or script placement:
             snapform-viewer 2>/dev/null || xfce4-terminal -e "snapform-viewer"
             ;;
-        MULTI_KITTY_PUBNIX)
+        M_KITTY_PUBNIX)
             kitty sh -c "/home/aaa/.local/bin/pubnix;exec bash"
             ;;
         REBOOT_TO_BIOS|SHEETS)
