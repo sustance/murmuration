@@ -4,8 +4,8 @@
 OS_TYPE=$(uname)
 
 while true; do
-
-    CHOICE=$(dialog --title "MENU cli commands" --menu \
+    # CHOICE=$(dialog --title "MENU cli commands" --menu \
+    CHOICE=$(dialog --menu \
     "Select a script to run:" 20 65 10 \
     "SHEETS_CSV"      "Cli spreadsheet" \
     "NEOMUTT"         "Open Gmail" \
