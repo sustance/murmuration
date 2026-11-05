@@ -3,6 +3,7 @@ Google Chrome, google-chrome,                                                int
 Thunar File M, thunar,                                                       system-file-manager
 Xfce Terminal, xfce4-terminal,                                               utilities-terminal
 Alacritty,     alacritty,                                                    utilities-terminal
+Kitty,         kitty,                                                        utilities-terminal
 Handoff > FF,  ~/.local/bin/handoff.sh,                                      go-jump
 Discord,       discord,                                                      discord
 Telegram,      /home/aaa/store/Applications/Telegram/Telegram,               telegram
