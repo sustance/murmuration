@@ -26,8 +26,8 @@ while true; do
     "XFCE4_SETTING"   "Settings-manager" \
     "CONSOLE_SETUP"   "Reconfig console" \
     "SNAPFORM_VIEW"   "EU govt form GUI" \
-    "M_KITTY_PUBNIX"  "Tmux all pubnix " \
-    "REBOOT_TO_BIOS"  "Reboots to BIOS" \
+    "KITTY_PUBNIX"    "Tmux all pubnix " \
+    "REBOOT_BIOS"     "Reboots to BIOS" \
     3>&1 1>&2 2>&3)
 
     # POSIX shell uses single '=' for checking the exit status safely
@@ -149,10 +149,10 @@ while true; do
             # Assuming snapform viewer binary or script placement:
             snapform-viewer 2>/dev/null || xfce4-terminal -e "snapform-viewer"
             ;;
-        M_KITTY_PUBNIX)
+        KITTY_PUBNIX)
             kitty sh -c "/home/aaa/.local/bin/pubnix;exec bash"
             ;;
-        REBOOT_TO_BIOS|SHEETS)
+        REBOOT_BIOS|SHEETS)
             xfce4-terminal --hold -e "sudo systemctl reboot --firmware-setup"
             ;;
         *)
