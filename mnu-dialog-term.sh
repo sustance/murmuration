@@ -7,6 +7,7 @@ while true; do
     # CHOICE=$(dialog --title "MENU cli commands" --menu \
     CHOICE=$(dialog --menu \
     "Select a script to run:" 20 65 10 \
+    "LF"              "tui File Man" \
     "SHEETS_CSV"      "Cli spreadsheet" \
     "NEOMUTT"         "Open Gmail" \
     "OPEN_BB"         "Open Bloomberg" \
@@ -37,6 +38,11 @@ while true; do
     fi
 
     case "$CHOICE" in
+
+            LF)
+            xfce4-terminal --hold -e "bash -c 'lf'"
+            ;;
+            
         SHEETS_CSV)
             xfce4-terminal --hold -e "bash -c '/home/aaa/store/Applications/sheets_Linux_x86_64/sheets /home/aaa/md/MATURITY.csv'"
             ;;
