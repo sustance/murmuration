@@ -8,6 +8,8 @@ while true; do
     CHOICE=$(dialog --menu \
     "Select a script to run:" 20 65 10 \
     "LF"              "tui File Man" \
+    "CALCURSE"        "Calcurse, Calen" \
+    "KHAL"            "Khal, Calendar" \ 
     "SHEETS_CSV"      "Cli spreadsheet" \
     "NEOMUTT"         "Open Gmail" \
     "OPEN_BB"         "Open Bloomberg" \
@@ -42,7 +44,15 @@ while true; do
             LF)
             xfce4-terminal --hold -e "bash -c 'lf'"
             ;;
-            
+
+            CALCURSE)
+            xfce4-terminal --hold -e "bash -c 'calcurse'"
+            ;;
+
+            KHAL)
+            xfce4-terminal --hold -e "bash -c 'khal'"
+            ;;
+    
         SHEETS_CSV)
             xfce4-terminal --hold -e "bash -c '/home/aaa/store/Applications/sheets_Linux_x86_64/sheets /home/aaa/md/MATURITY.csv'"
             ;;
