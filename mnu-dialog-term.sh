@@ -10,6 +10,7 @@ while true; do
     "LF"              "tui File Man" \
     "CALCURSE"        "Calcurse, Calen" \
     "KHAL"            "Khal, Calendar" \ 
+    "YT-DLP"          "Yt-dlp, video" \ 
     "BTM"             "Btm, Sys info" \ 
     "SHEETS_CSV"      "Cli spreadsheet" \
     "NEOMUTT"         "Open Gmail" \
@@ -53,7 +54,11 @@ while true; do
             KHAL)
             xfce4-terminal --hold -e "bash -c 'khal'"
             ;;
-
+            
+            YT-DLP)
+            xfce4-terminal --hold -e "bash -c 'yt-dlp'"
+            ;;
+            
             BTM)
             xfce4-terminal --hold -e "bash -c 'btm'"
             ;;
