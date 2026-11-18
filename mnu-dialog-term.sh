@@ -10,6 +10,7 @@ while true; do
     "LF"              "tui File Man" \
     "CALCURSE"        "Calcurse, Calen" \
     "KHAL"            "Khal, Calendar" \ 
+    "BTM"             "Btm, Sys info" \ 
     "SHEETS_CSV"      "Cli spreadsheet" \
     "NEOMUTT"         "Open Gmail" \
     "OPEN_BB"         "Open Bloomberg" \
@@ -52,7 +53,11 @@ while true; do
             KHAL)
             xfce4-terminal --hold -e "bash -c 'khal'"
             ;;
-    
+
+            BTM)
+            xfce4-terminal --hold -e "bash -c 'btm'"
+            ;;
+            
         SHEETS_CSV)
             xfce4-terminal --hold -e "bash -c '/home/aaa/store/Applications/sheets_Linux_x86_64/sheets /home/aaa/md/MATURITY.csv'"
             ;;
