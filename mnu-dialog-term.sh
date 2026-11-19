@@ -9,9 +9,9 @@ while true; do
     "Select a script to run:" 20 65 10 \
     "LF"              "tui File Man" \
     "CALCURSE"        "Calcurse, Calen" \
-    "KHAL"            "Khal, Calendar" \ 
-    "YT-DLP"          "Yt-dlp, video" \ 
-    "BTM"             "Btm, Sys info" \ 
+    "KHAL"            "Khal, Calendar" \
+    "YT-DLP"          "Yt-dlp, video" \
+    "BTM"             "Btm, Sys info" \
     "SHEETS_CSV"      "Cli spreadsheet" \
     "NEOMUTT"         "Open Gmail" \
     "OPEN_BB"         "Open Bloomberg" \
