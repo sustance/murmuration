@@ -7,6 +7,8 @@ while true; do
 
     CHOICE=$(dialog --title "MENU clo commands" --menu \
     "Select a script to run:" 20 65 10 \
+    "SEND_ME" "wa-me" \
+    "SEND_ME_IMG" "wa-me-img" \
     "DNS_TEST" "Compare all DNS targets for performance" \
     "CUSTOM" "Enter a custom URL manually" \
     3>&1 1>&2 2>&3)
@@ -21,8 +23,15 @@ while true; do
         DNS_TEST)
             xfce4-terminal -e "/home/aaa/.local/bin/dnsperftest/dnstest.sh | sort -k 22 -n"
             ;;
-
-
+            
+        SEND_ME)
+            xfce4-terminal -e "wa-me"
+            ;;
+            
+        SEND_ME)
+            xfce4-terminal -e "wa-me-img"
+            ;;
+            
         CUSTOM)
             URL=$(dialog --inputbox "Enter complete URL:" 8 60 "https://" 3>&1 1>&2 2>&3)
             if [ -n "$URL" ]; then
