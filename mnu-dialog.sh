@@ -7,6 +7,7 @@ while true; do
 
     CHOICE=$(dialog --title "MENU clo commands" --menu \
     "Select a script to run:" 20 65 10 \
+    "MUDSLIDE" "Mudslide Whatsapp" \
     "SEND_ME" "wa-me" \
     "SEND_ME_IMG" "wa-me-img" \
     "DNS_TEST" "Compare all DNS targets for performance" \
@@ -31,6 +32,10 @@ while true; do
             xfce4-terminal -e "/home/aaa/.local/bin/dnsperftest/dnstest.sh | sort -k 22 -n"
             ;;
 
+        MUDSLIDE)
+            xfce4-terminal -e "/home/aaa/.local/bin/mudslide"
+            ;;
+ 
         SEND_ME)
             xfce4-terminal -e "wa-me"
             ;;
