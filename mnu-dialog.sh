@@ -18,19 +18,27 @@ while true; do
         echo "Navigation cancelled."
         exit 0
     fi
+# TESTING ONLY
+#        dialog_status=$?
+#    if [ "$dialog_status" -ne 0 ]; then
+#        printf 'dialog exit status: %s; captured output: <%s>\n' \
+#            "$dialog_status" "$CHOICE" >&2
+#        exit 0
+#    fi
 
     case "$CHOICE" in
         DNS_TEST)
             xfce4-terminal -e "/home/aaa/.local/bin/dnsperftest/dnstest.sh | sort -k 22 -n"
             ;;
-            
+
         SEND_ME)
             xfce4-terminal -e "wa-me"
             ;;
             
-        SEND_ME)
+        SEND_ME_IMG)
             xfce4-terminal -e "wa-me-img"
             ;;
+
             
         CUSTOM)
             URL=$(dialog --inputbox "Enter complete URL:" 8 60 "https://" 3>&1 1>&2 2>&3)
